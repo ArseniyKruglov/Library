@@ -1,0 +1,17 @@
+.Header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.Header > .Title
+{
+    font-size: 22px;
+}
+
+.Header > custom-round-button
+{
+    --Scale: 28px
+}

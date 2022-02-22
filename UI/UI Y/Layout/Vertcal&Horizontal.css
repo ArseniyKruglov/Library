@@ -1,0 +1,59 @@
+.Horizontal,
+.Horizonta-Nano,
+.Horizontal-Tiny,
+.Horizontal-Default,
+.Horizontal-Roomy
+{
+    display: flex;
+}
+
+.Horizonta-Nano
+{
+    gap: 2.5px;
+}
+
+.Horizontal-Tiny
+{
+    gap: 5px;
+}
+
+.Horizontal-Default
+{
+    gap: 10px;
+}
+
+.Horizontal-Roomy
+{
+    gap: 15px;
+}
+
+
+
+.Vertical,
+.Vertical-Nano,
+.Vertical-Tiny,
+.Vertical-Default,
+.Vertical-Roomy
+{
+    display: grid;
+}
+
+.Vertical-Nano
+{
+    gap: 2.5px;
+}
+
+.Vertical-Tiny
+{
+    gap: 5px;
+}
+
+.Vertical-Default
+{
+    gap: 10px;
+}
+
+.Vertical-Roomy
+{
+    gap: 17.5px;
+}

@@ -1,0 +1,25 @@
+body
+{
+    --Background00: #FFFFFF;
+    --Background01: #FFFFFF;
+}
+
+@media (prefers-color-scheme: dark) { body
+{
+    --Background00: HSL(225, 6%, 7.5%);
+    --Background01: HSL(225, 6%, 12.5%);
+} }
+
+
+
+.Level-1
+{
+    background-color: var(--Background01);
+    box-shadow: 0px 1px 2px 0px HSLA(0, 0%, 0%, 25%), 0px 1px 3px 1px HSLA(0, 0%, 0%, 10%);
+}
+
+.Level-2
+{
+    background-color: var(--Background01);
+    box-shadow: 0 1px 3px HSLA(0, 0%, 0%, 25%), 0 4px 12px HSLA(0, 0%, 0%, 10%);
+}

@@ -1,0 +1,47 @@
+#Notifications
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    max-height: calc(100% - 10px * 2);
+}
+
+
+
+.Notification
+{
+    transition: opacity 250ms, height 250ms;
+    width: fit-content;
+    justify-self: end;
+}
+
+.Notification.Closing
+{
+    opacity: 0;
+    height: 0 !important;
+}
+
+.Notification > custom-icon
+{
+    --Scale: 36px;
+    /* opacity: 70%; */
+}
+
+.Notification.Type-1 > custom-icon
+{
+    --Color: var(--Main-UI);
+}
+
+.Notification.Type-2 > custom-icon
+{
+    --Color: Brown;
+}
+
+
+
+.Notification > span
+{
+    max-width: 190px;
+    max-height: 400px;
+}

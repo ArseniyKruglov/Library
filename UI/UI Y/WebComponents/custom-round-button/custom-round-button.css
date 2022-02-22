@@ -13,6 +13,7 @@ custom-round-button
 
 custom-round-button > button
 {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
