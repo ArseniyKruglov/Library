@@ -1,3 +1,9 @@
+*
+{
+    color: var(--Text);
+    font-size: 16px;
+}
+
 .Ellipsis
 {
     overflow: hidden;

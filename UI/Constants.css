@@ -1,9 +1,5 @@
 *
 {
-    --Border: 1px Solid var(--Gray20);
-    --Border-Strong: 1px Solid HSLA(0, 0%, var(--Key), 50%);
-    --Border-UI: 1px Solid var(--Main-UI);
-
     --Text: HSL(0, 0%, var(--Key));
 
     --Gray70: HSLA(0, 0%, var(--Key), 70%);

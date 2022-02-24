@@ -1,14 +1,34 @@
-function SendRequest(URL, Data, Callback)
+function SendRequest(URL, Type, Data, Callback)
 {
-    let FD = new FormData();
-    for (let loop_Field in Data)
-        FD.append(loop_Field, Data[loop_Field]);
+    const XHR = new XMLHttpRequest();
 
-    let XHR = new XMLHttpRequest();
-    XHR.open('POST', URL);
-    XHR.send(FD);
+    if (Type === 'GET')
+    {
+        if (Object.keys(Data).length !== 0)
+        {
+            let First = true;
+            for (let loop_Field in Data)
+            {
+                URL += `${First ? '?' : '&'}${loop_Field}=${Data[loop_Field]}`;
+                First = false;
+            };
+        };
 
-    if (Callback)
+        XHR.open('GET', URL);
+        XHR.send();
+    }
+    else
+    {
+        const Form = new FormData();
+        for (let loop_Field in Data)
+            Form.append(loop_Field, Data[loop_Field]);
+
+        XHR.open('POST', URL);
+        XHR.send(Form);
+    };
+
+
+    if (Callback !== undefined)
         XHR.onreadystatechange = () =>
         {
             if (XHR.readyState === 4)

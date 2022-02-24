@@ -1,6 +1,6 @@
 function Notify(Text, Type = 0)
 {
-    let Container = document.getElementById('Notifications');
+    const Container = document.getElementById('Notifications');
     if (Container === null)
     {
         Container = document.createElement('div');
@@ -19,8 +19,7 @@ function Notify(Text, Type = 0)
             Element.remove();
     }
 
-    let Element;
-    Element = document.createElement('div');
+    const Element = document.createElement('div');
     Element.className = `Notification Level-2 Round Horizontal-Default Padding-Roomy Center Type-${Type}`;
     Element.innerHTML = `<custom-icon icon='${['Chat Bubble', 'Chat Bubble', 'Error Outlined'][Type]}'></custom-icon>
                          <span class='OverflowY'>${Text}</span>`;

@@ -1,0 +1,38 @@
+custom-tabs > .Titles
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+custom-tabs > .Titles > .Selected
+{
+    color: var(--Main-UI);
+}
+
+custom-tabs > .Titles >  * > .Highlight
+{
+    height: 3px;
+    content: ' ';
+    border-radius: 5px 5px 0 0;
+    transition: transform 250ms;
+}
+
+custom-tabs > .Titles >  .Selected > .Highlight
+{
+    background-color: var(--Main-UI);
+}
+
+custom-tabs > .Titles >  :not(.Selected) > .Highlight
+{
+    background-color: var(--Gray20);
+    transform: scaleY(0.5);
+}
+
+
+
+custom-tabs > .Content > :not(.Selected)
+{
+    display: none;
+}

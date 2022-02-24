@@ -1,0 +1,21 @@
+*
+{
+    --Border: 1px Solid var(--Gray20);
+    --Border-Strong: 1px Solid HSLA(0, 0%, var(--Key), 50%);
+    --Border-UI: 1px Solid var(--Main-UI);
+}
+
+.Border
+{
+    border: var(--Border);
+}
+
+.Border-Strong
+{
+    border: var(--Border-Strong);
+}
+
+.Border-UI
+{
+    border: var(--Border-UI);
+}
