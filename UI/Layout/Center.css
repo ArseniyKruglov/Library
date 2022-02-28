@@ -1,9 +1,36 @@
-.Center
+.Center         /* ~Legacy */
 {
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: center;
     justify-items: center;
+    text-align: center;
+}
+
+
+
+.CenterX,
+.CenterY
+{
+    display: flex;
+}
+
+.CenterX
+{
+    align-content: center;
+    justify-content: center;
+}
+
+.CenterY
+{
+    justify-content: center;
+    justify-items: center;
+}
+
+
+
+.CenterText
+{
     text-align: center;
 }

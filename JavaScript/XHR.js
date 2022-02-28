@@ -32,6 +32,6 @@ function SendRequest(URL, Type, Data, Callback)
         XHR.onreadystatechange = () =>
         {
             if (XHR.readyState === 4)
-                Callback(XHR.status, XHR.responseText)
+                Callback({ 'Code': XHR.status, 'Message': XHR.statusText }, XHR.responseText)
         };
 }

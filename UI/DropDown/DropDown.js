@@ -4,7 +4,7 @@ class DropDown
     {
         this.Source = Source;
         this.Element = document.createElement('div');
-        this.Element.classList.add('DropDown', 'Level-2', 'VeryRound', 'Padding-Default');
+        this.Element.classList.add('DropDown', 'Level-2');
     }
 
     Open()
@@ -45,4 +45,20 @@ class DropDown
         this.Element.style.top = Top + 'px';
         this.Element.style.left = Left + 'px';
     }
+}
+
+function DropDown_Template(DropDown, Actions)
+{
+    DropDown.Element.classList.add('Template', 'Vertical', 'Round');
+
+    for (let loop_Action of Actions)
+    {
+        const Element = document.createElement('button');
+        Element.innerHTML =    `<custom-icon icon='${loop_Action.Icon}'></custom-icon>
+                                <span>${loop_Action.Caption}</span>`;
+        Element.addEventListener('click', loop_Action.Callback);
+        Element.classList.add('Center', 'Horizontal-Default');
+
+        DropDown.Element.append(Element);
+    };
 }

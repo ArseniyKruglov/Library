@@ -3,3 +3,25 @@
     position: absolute;
     z-index: 5;
 }
+
+.DropDown.Template
+{
+    padding: 5px 0;
+    gap: 7.5px;
+}
+
+.DropDown.Template > button
+{
+    padding: 7.5px 10px;
+    justify-content: left;
+}
+
+.DropDown.Template > button:hover
+{
+    background-color: var(--Gray05);
+}
+
+.DropDown.Template > button > custom-icon
+{
+    opacity: 70%;
+}

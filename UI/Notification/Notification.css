@@ -28,12 +28,12 @@
     /* opacity: 70%; */
 }
 
-.Notification.Type-1 > custom-icon
+.Notification.Type-Good > custom-icon
 {
     --Color: var(--Main-UI);
 }
 
-.Notification.Type-2 > custom-icon
+.Notification.Type-Bad > custom-icon
 {
     --Color: Brown;
 }
