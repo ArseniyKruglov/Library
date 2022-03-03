@@ -33,3 +33,15 @@ function Notify(Text, Class = 'OK', Icon = 'Chat Bubble')
         setTimeout(() => { Remove() }, 250);
     }, 5000);
 }
+
+function DefaultRequestFailHandler(Code, FallbackText, FallbackIcon)
+{
+    if (Code === 500)
+        Notify([`Server error.`, 'Ошибка на сервере.'][Language], 'Bad', 'Server');
+    else if (Code === 401 || Code === 403)
+        Notify([`You aren't authorized.`, 'Вы не авторизованы.'][Language], 'Bad', 'Server');
+    else if (Code === 0 || Code === 408)
+        Notify([`Connectivity issues.`, 'Проблемы с подключением.'][Language], 'Bad', 'Wifi');
+    else
+        Notify(FallbackText, 'Bad', FallbackIcon);
+}

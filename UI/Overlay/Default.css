@@ -1,6 +1,8 @@
 .Overlay > .Default
 {
     width: 400px;
+    max-width: calc(100% - 10px);
+    max-height: calc(100% - 40px);
     overflow: auto;
     margin: 5px;
 }

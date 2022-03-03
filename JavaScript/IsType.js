@@ -15,7 +15,7 @@ function IsDate(Variable)
 
 function IsString(Variable)
 {
-    return (typeof Device === 'string' || Device instanceof String);
+    return (typeof Variable === 'string' || Variable instanceof String);
 }
 
 function IsFunction(Variable)

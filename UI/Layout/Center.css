@@ -18,14 +18,14 @@
 
 .CenterX
 {
-    align-content: center;
     justify-content: center;
+    justify-items: center;
 }
 
 .CenterY
 {
-    justify-content: center;
-    justify-items: center;
+    align-items: center;
+    align-content: center;
 }
 
 
