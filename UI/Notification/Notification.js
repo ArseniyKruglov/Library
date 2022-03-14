@@ -34,9 +34,9 @@ function Notify(Text, Class = 'OK', Icon = 'Chat Bubble')
     }, 5000);
 }
 
-function DefaultRequestFailHandler(Code, FallbackText, FallbackIcon)
+function DefaultRequestFailHandler(Code, FallbackText = ['Error occured.', 'Произошла ошибка.'][Language], FallbackIcon = 'Error Outlined')
 {
-    if (Code === 500)
+    if (~~(Code / 100) === 5 || Code === 404)
         Notify([`Server error.`, 'Ошибка на сервере.'][Language], 'Bad', 'Server');
     else if (Code === 401 || Code === 403)
         Notify([`You aren't authorized.`, 'Вы не авторизованы.'][Language], 'Bad', 'Server');

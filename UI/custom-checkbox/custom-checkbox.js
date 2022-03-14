@@ -30,7 +30,7 @@ class Checkbox extends HTMLElement
 
     set checked(Checked)
     {
-        if (Checked != this.Checkbox.checked)
+        if (Checked !== this.Checkbox.checked)
         {
             this.Checkbox.checked = Checked;
             PlayClass(this.children[0], Checked ? 'Checked' : 'Unchecked', 500);

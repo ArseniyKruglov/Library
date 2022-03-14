@@ -8,6 +8,11 @@ function IsNumber(Variable)
     return isNaN(Variable) === false;
 }
 
+function IsInteger(Variable)
+{
+    return IsNumber(Variable) && Number.isInteger(Variable);
+}
+
 function IsDate(Variable)
 {
     return Variable instanceof Date;

@@ -1,15 +1,7 @@
 .Processing
 {
     cursor: wait;
-}
-
-.Processing > *
-{
     transition: opacity 100ms;
-}
-
-.Processing > *
-{
     opacity: 50%;
     pointer-events: none;
 }

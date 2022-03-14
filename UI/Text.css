@@ -4,7 +4,8 @@
     font-size: 16px;
 }
 
-.Ellipsis
+.Ellipsis,
+.Ellipsis *
 {
     overflow: hidden;
     text-overflow: ellipsis;

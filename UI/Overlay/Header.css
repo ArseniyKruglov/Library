@@ -13,5 +13,6 @@
 
 .Header > custom-round-button
 {
-    --Scale: 28px
+    --Scale: 28px;
+    --Icon-Color: var(--Gray70);
 }

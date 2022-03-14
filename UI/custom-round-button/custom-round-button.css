@@ -63,10 +63,10 @@ custom-round-button > button:hover > .Backlight
 
 custom-round-button > button > .Ripple
 {
-    animation: Ripple 750ms linear;
+    animation: Ripple_Button 750ms linear;
 }
 
-@keyframes Ripple
+@keyframes Ripple_Button
 {
     0%     { opacity: 40%;   clip-path: circle(calc(var(--Radius) / 4));  }
     17.5%  { opacity: 25%;   clip-path: circle(calc(var(--Radius) / 2));  }
