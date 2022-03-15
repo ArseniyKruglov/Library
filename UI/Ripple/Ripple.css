@@ -3,8 +3,8 @@ span.Ripple
     position: absolute;
     border-radius: 50%;
     transform: scale(0);
-    background-color: black;
-    animation: Ripple 750ms linear;
+    background-color: var(--Ripple-Color, #000000);
+    animation: Ripple 750ms Linear;
     pointer-events: none;
 }
 
@@ -15,9 +15,7 @@ span.Ripple
     100% { transform: scale(400%); opacity: 0%; }
 }
 
-button,
-padding-button,
-.RippleTarget
+.Rippled
 {
     position: relative;
     overflow: hidden;

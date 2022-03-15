@@ -54,10 +54,15 @@ function DropDown_Template(DropDown, Actions)
     for (let loop_Action of Actions)
     {
         const Element = document.createElement('button');
-        Element.innerHTML =    `<custom-icon icon='${loop_Action.Icon}'></custom-icon>
+
+        Element.innerHTML =    `${loop_Action.Icon ? `<custom-icon icon='${loop_Action.Icon}'></custom-icon>` : ''}
                                 <span>${loop_Action.Caption}</span>`;
+
         Element.addEventListener('click', loop_Action.Callback);
+
         Element.classList.add('Center', 'Horizontal-Default');
+
+
 
         DropDown.Element.append(Element);
     };

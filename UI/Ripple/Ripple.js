@@ -12,7 +12,14 @@ function ListenRipple(Element)
         Ripple.classList.add('Ripple');
 
         Element.appendChild(Ripple);
-        setTimeout(() => Ripple.remove(), 750);
+        Element.classList.add('Rippled');
+        setTimeout(() =>
+        {
+            Ripple.remove();
+
+            if (Element.querySelector('.Ripple') === null)
+                Element.classList.remove('Rippled');
+        }, 750);
     }
 
     Element.addEventListener('click', Ripple);

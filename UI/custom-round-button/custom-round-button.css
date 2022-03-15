@@ -5,7 +5,7 @@ custom-round-button
 
     --this-Scale: var(--Scale);     /* TO DO */
 
-    --Icon-Color: var(--Text);
+    --Icon-Color: var(--Gray70);
     --Hover-Color: var(--Gray70);
 }
 
