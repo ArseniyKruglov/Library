@@ -9,7 +9,7 @@ class Tabs extends HTMLElement
 
         for (let i = 0; i < this.children[0].children.length; i++)
         {
-            const Element = document.createElement('span');
+            const Element = document.createElement('Span');
             Element.classList.add('Highlight');
             this.children[0].children[i].append(Element);
             this.children[0].children[i].classList.add('Medium', 'Vertical-Tiny');

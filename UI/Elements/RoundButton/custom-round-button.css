@@ -26,7 +26,7 @@ custom-round-button > button
 
 
 
-custom-round-button > button > custom-icon
+custom-round-button > button > Custom-Icon
 {
     --Color: var(--Icon-Color);
     --Scale: var(--this-Scale);

@@ -3,7 +3,7 @@ function Notify(Text, Class = 'OK', Icon = 'Chat Bubble')
     let Container = document.getElementById('Notifications');
     if (Container === null)
     {
-        Container = document.createElement('div');
+        Container = document.createElement('Div');
         Container.id = 'Notifications';
         Container.className = 'Vertical-Default Padding-Default OverflowY';
         document.body.append(Container);
@@ -19,10 +19,10 @@ function Notify(Text, Class = 'OK', Icon = 'Chat Bubble')
             Element.remove();
     }
 
-    const Element = document.createElement('div');
+    const Element = document.createElement('Div');
     Element.className = `Notification Level-2 Round Horizontal-Default Padding-Roomy Center Type-${Class}`;
-    Element.innerHTML = `<custom-icon icon='${Icon}'></custom-icon>
-                         <span class='OverflowY'>${Text}</span>`;
+    Element.innerHTML = `<Custom-Icon icon='${Icon}'></Custom-Icon>
+                         <Span class='OverflowY'>${Text}</Span>`;
     Element.addEventListener('click', () => Remove());
 
     Container.append(Element);

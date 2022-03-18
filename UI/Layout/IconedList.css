@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.IconedList > :not(:focus-within) > custom-icon
+.IconedList > :not(:focus-within) > Custom-Icon
 {
     opacity: 70%;
 }

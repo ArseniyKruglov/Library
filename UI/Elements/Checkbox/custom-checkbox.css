@@ -11,20 +11,20 @@ custom-checkbox input[type=checkbox]
     opacity: 0;
 }
 
-custom-checkbox input[type=checkbox].focus-visible:focus + div > :first-child > :nth-child(2),
-custom-checkbox input[type=checkbox].focus-visible:focus + div > :first-child > :nth-child(3)
+custom-checkbox input[type=checkbox].focus-visible:focus + Div > :first-child > :nth-child(2),
+custom-checkbox input[type=checkbox].focus-visible:focus + Div > :first-child > :nth-child(3)
 {
     outline: auto;
 }
 
-custom-checkbox input[type=checkbox]:checked + div > :first-child > :nth-child(2),
-custom-checkbox input[type=checkbox]:not(:checked) + div > :first-child > :nth-child(3)
+custom-checkbox input[type=checkbox]:checked + Div > :first-child > :nth-child(2),
+custom-checkbox input[type=checkbox]:not(:checked) + Div > :first-child > :nth-child(3)
 {
     display: block;
 }
 
-custom-checkbox input[type=checkbox]:not(:checked) + div > :first-child > :nth-child(2),
-custom-checkbox input[type=checkbox]:checked + div > :first-child > :nth-child(3)
+custom-checkbox input[type=checkbox]:not(:checked) + Div > :first-child > :nth-child(2),
+custom-checkbox input[type=checkbox]:checked + Div > :first-child > :nth-child(3)
 {
     display: none;
 }
@@ -36,7 +36,7 @@ custom-checkbox > label
     width: fit-content;
 }
 
-custom-checkbox > label > div
+custom-checkbox > label > Div
 {
     display: grid;
     grid-auto-flow: column;
@@ -45,7 +45,7 @@ custom-checkbox > label > div
     gap: 5px;
 }
 
-custom-checkbox > label > div > :first-child > svg
+custom-checkbox > label > Div > :first-child > svg
 {
     width: 22px;
     height: 22px;
@@ -53,8 +53,8 @@ custom-checkbox > label > div > :first-child > svg
 
 
 
-custom-checkbox:not([splash=false]) > label.Checked > div > :nth-child(2),
-custom-checkbox:not([splash=false]) > label.Unchecked > div > :nth-child(2)
+custom-checkbox:not([splash=false]) > label.Checked > Div > :nth-child(2),
+custom-checkbox:not([splash=false]) > label.Unchecked > Div > :nth-child(2)
 {
     display: initial !important;
     position: absolute;
@@ -65,12 +65,12 @@ custom-checkbox:not([splash=false]) > label.Unchecked > div > :nth-child(2)
     z-index: -1;
 }
 
-custom-checkbox:not([splash=false]) > label.Checked > div> :nth-child(2)
+custom-checkbox:not([splash=false]) > label.Checked > Div> :nth-child(2)
 {
     animation: CheckedCheckboxRipple 500ms;
 }
 
-custom-checkbox:not([splash=false]) > label.Unchecked > div > :nth-child(2)
+custom-checkbox:not([splash=false]) > label.Unchecked > Div > :nth-child(2)
 {
     animation: UncheckedCheckboxRipple 500ms;
 }
@@ -89,7 +89,7 @@ custom-checkbox:not([splash=false]) > label.Unchecked > div > :nth-child(2)
     100% { transform: scale(95%); opacity: 0%; background-color: var(--Gray02); }
 }
 
-custom-checkbox > label.Checked > div > span > :nth-child(1)
+custom-checkbox > label.Checked > Div > Span > :nth-child(1)
 {
     display: initial !important;
     position: absolute;

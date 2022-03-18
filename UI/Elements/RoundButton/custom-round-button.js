@@ -3,8 +3,8 @@ class RoundButton extends HTMLElement
     connectedCallback()
     {
         this.innerHTML =   `<button>
-                                <custom-icon icon='${this.getAttribute('icon')}'></custom-icon>
-                                <span class='Backlight'></span>
+                                <Custom-Icon icon='${this.getAttribute('icon')}'></Custom-Icon>
+                                <Span class='Backlight'></Span>
                             </button>`;
 
         const PassAtributes = (Attributes, To) =>
@@ -22,7 +22,7 @@ class RoundButton extends HTMLElement
 
         this.addEventListener('click', () =>
         {
-            const Ripple = document.createElement('span');
+            const Ripple = document.createElement('Span');
             Ripple.className = 'Ripple';
             this.children[0].append(Ripple);
             setTimeout(() => Ripple.remove(), 750);

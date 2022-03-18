@@ -3,7 +3,7 @@ class DropDown
     constructor(Source)
     {
         this.Source = Source;
-        this.Element = document.createElement('div');
+        this.Element = document.createElement('Div');
         this.Element.classList.add('DropDown', 'Level-2');
     }
 
@@ -55,8 +55,8 @@ function DropDown_Template(DropDown, Actions)
     {
         const Element = document.createElement('button');
 
-        Element.innerHTML =    `${loop_Action.Icon ? `<custom-icon icon='${loop_Action.Icon}'></custom-icon>` : ''}
-                                <span>${loop_Action.Caption}</span>`;
+        Element.innerHTML =    `${loop_Action.Icon ? `<Custom-Icon icon='${loop_Action.Icon}'></Custom-Icon>` : ''}
+                                <Span>${loop_Action.Caption}</Span>`;
 
         Element.addEventListener('click', loop_Action.Callback);
 

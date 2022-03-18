@@ -22,25 +22,25 @@
     height: 0 !important;
 }
 
-.Notification > custom-icon
+.Notification > Custom-Icon
 {
     --Scale: 36px;
     /* opacity: 70%; */
 }
 
-.Notification.Type-Good > custom-icon
+.Notification.Type-Good > Custom-Icon
 {
     --Color: var(--Main-UI);
 }
 
-.Notification.Type-Bad > custom-icon
+.Notification.Type-Bad > Custom-Icon
 {
     --Color: Brown;
 }
 
 
 
-.Notification > span
+.Notification > Span
 {
     max-width: 190px;
     max-height: 400px;
