@@ -1,0 +1,27 @@
+Body
+{
+	--Background00: #FFFFFF;
+	--Background01: #FFFFFF;
+}
+
+@Media (Prefers-color-scheme: Dark) { Body
+{
+	--Background00: HSL(225, 6%, 7.5%);
+	--Background01: HSL(225, 6%, 12.5%);
+} }
+
+
+
+@mixin Level-1
+{
+	Z-Index: 1;
+	Background-Color: Var(--Background01);
+	Box-Shadow: 0px 1px 2px 0px HSLA(0, 0%, 0%, 25%), 0px 1px 3px 1px HSLA(0, 0%, 0%, 10%);
+}
+
+@mixin Level-2
+{
+	Z-Index: 2;
+	Background-Color: Var(--Background01);
+	Box-Shadow: 0 1px 3px HSLA(0, 0%, 0%, 25%), 0 4px 12px HSLA(0, 0%, 0%, 10%);
+}

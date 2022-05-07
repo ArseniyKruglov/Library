@@ -1,0 +1,90 @@
+Custom-Round-Button {
+  --Scale: 24px;
+  --Radius: Calc(Var(--Scale) + 12px);
+  --This-Scale: Var(--Scale);
+  /* TO DO */
+  --Icon-Color: Var(--Gray-80);
+  --Hover-Color: Var(--Gray-80);
+}
+
+Custom-Round-Button > Button {
+  Padding: 0;
+  Font-Size: 100%;
+  Border: None;
+  Background: None;
+  Text-Align: Initial;
+  Position: Relative;
+  Display: Flex;
+  Align-Items: Center;
+  Justify-Content: Center;
+  Width: Var(--Radius);
+  Height: Var(--Radius);
+  Margin: -5px;
+}
+
+Custom-Round-Button > Button > Custom-Icon {
+  --Color: Var(--Icon-Color);
+  --Scale: Var(--This-Scale);
+  Z-Index: 1;
+}
+
+Custom-Round-Button > Button > .Backlight,
+Custom-Round-Button > Button > .Ripple {
+  Position: Absolute;
+  Clip-Path: Circle(0);
+  Width: 100%;
+  Height: 100%;
+  Background-Color: Var(--Hover-Color);
+}
+
+Custom-Round-Button > Button > .Backlight {
+  Opacity: 0%;
+  Transition: Opacity 50ms, Clip-Path 300ms;
+}
+
+Custom-Round-Button > Button > .Ripple {
+  Animation: Ripple_Button 750ms Linear;
+}
+
+@-webkit-keyframes Ripple_Button {
+  0% {
+    Opacity: 40%;
+    Clip-Path: Circle(Calc(Var(--Radius)/4));
+  }
+  17.5% {
+    Opacity: 25%;
+    Clip-Path: Circle(Calc(Var(--Radius)/2));
+  }
+  50% {
+    Opacity: 5%;
+  }
+  100% {
+    Opacity: 0%;
+    Clip-Path: Circle(Calc(Var(--Radius)/2));
+  }
+}
+
+@keyframes Ripple_Button {
+  0% {
+    Opacity: 40%;
+    Clip-Path: Circle(Calc(Var(--Radius)/4));
+  }
+  17.5% {
+    Opacity: 25%;
+    Clip-Path: Circle(Calc(Var(--Radius)/2));
+  }
+  50% {
+    Opacity: 5%;
+  }
+  100% {
+    Opacity: 0%;
+    Clip-Path: Circle(Calc(Var(--Radius)/2));
+  }
+}
+
+@media (hover: hover) {
+  Custom-Round-Button > Button:Hover > .Backlight {
+    Opacity: 5%;
+    Clip-Path: Circle(Calc(Var(--Radius)/2));
+  }
+}

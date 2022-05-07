@@ -1,0 +1,12 @@
+.Overlay.Fullscreen
+{
+	position: absolute;
+	Background: Var(--Background00);
+}
+
+
+
+Body.BehindOverlay > Main
+{
+	Display: None;
+}

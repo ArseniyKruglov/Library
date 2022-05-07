@@ -1,0 +1,18 @@
+*
+{
+	Color: Var(--Text);
+	Font-Size: 16px;
+}
+
+@mixin Ellipsis
+{
+	Overflow: Hidden;
+	Text-Overflow: Ellipsis;
+	White-Space: Nowrap;
+}
+
+.Ellipsis,
+.Ellipsis *
+{
+	@include Ellipsis;
+}

@@ -1,0 +1,83 @@
+@import '../../AutoLayout.scss';
+@import '../../Reset.scss';
+@import '../../Basic/Border.scss';
+
+Button.Text
+{
+	@include Reset_Button;
+	@include AutoLayout;
+	@include Width_Fit;
+	Padding: 3px 5px;
+	Border-radius: 5px;
+
+
+
+	&.Roomy
+	{
+		Padding: 7.5px;
+	}
+
+	&,
+	&.Icon > Span
+	{
+		Font-weight: 500;
+		Font-size: 14px;
+	}
+
+
+
+	&:Hover
+	{
+		Background-color: Var(--Gray05);
+	}
+
+
+
+	&.Icon
+	{
+		Display: Flex;
+		Align-items: Center;
+		Gap: 7.5px;
+	}
+
+	&.Icon > Custom-icon
+	{
+		--Scale: 20px;
+	}
+
+
+
+	&.Main
+	{
+		Color: Var(--Main-UI);
+		--Ripple-Color: Var(--Main-UI);
+	}
+
+	&.Main:Hover
+	{
+		Background-color: Var(--Main-UI-Transparent);
+	}
+
+
+
+	&.Gray:not(:hover),
+	&.Gray:not(:hover) > Span,
+	&.Gray:not(:hover) > Custom-icon *
+	{
+		Transition: 100ms;
+		Color: Var(--Gray-80);
+		Fill: Var(--Gray-80);
+	}
+
+
+
+	&.Outlined
+	{
+		@include Border;
+
+		&.Main
+		{
+			Border-Color: HSLA(146, 70%, 30%, 25%);
+		}
+	}
+}

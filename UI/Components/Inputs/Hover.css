@@ -1,0 +1,11 @@
+.InputContainer.Outlined:Hover,
+.InputContainer.Outlined:Focus-Within
+{
+	Border: Var(--Border-Strong);
+}
+
+.InputContainer:not(.Outlined):Hover,
+.InputContainer:not(.Outlined):Focus-Within
+{
+	Background-Color: Var(--Gray-20);
+}

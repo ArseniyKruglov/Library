@@ -1,9 +1,0 @@
-.EmptyHidden:empty
-{
-    display: none;
-}
-
-[hidden]
-{
-    display: none !important;
-}

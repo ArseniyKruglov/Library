@@ -1,0 +1,270 @@
+@mixin AutoLayout
+{
+	@include AutoLayoutCore;
+	@include AlignX_Begin;
+	@include AlignY_Begin;
+	@include Direction_Horizontal;
+	@include Packing_Packed;
+	@include Width_Fit;
+	@include Height_Fit;
+}
+
+@mixin AutoLayoutCore
+{
+	Display: Flex;
+}
+
+
+
+@mixin AlignX_Begin
+{
+	@include AutoLayoutCore;
+	Justify-content: Start;
+}
+
+@mixin AlignX_Center
+{
+	@include AutoLayoutCore;
+	Justify-content: Center;
+}
+
+@mixin AlignX_End
+{
+	@include AutoLayoutCore;
+	Justify-content: End;
+}
+
+@mixin AlignY_Begin
+{
+	@include AutoLayoutCore;
+	Align-items: Start;
+}
+
+@mixin AlignY_Baseline
+{
+	@include AutoLayoutCore;
+	Align-items: Baseline;
+}
+
+@mixin AlignY_Center
+{
+	@include AutoLayoutCore;
+	Align-items: Center;
+}
+
+@mixin AlignY_Top
+{
+	@include AutoLayoutCore;
+	Align-items: End;
+}
+
+
+
+@mixin Direction_Horizontal
+{
+	@include AutoLayoutCore;
+	Flex-Direction: Row;
+}
+
+@mixin Direction_Vertical
+{
+	@include AutoLayoutCore;
+	Flex-Direction: Column;
+}
+
+
+
+@mixin Packing_Packed
+{
+	@include AutoLayoutCore;
+	Align-content: Begin;
+	Justify-content: Begin;
+}
+
+@mixin Packing_SpaceBetween
+{
+	@include AutoLayoutCore;
+	Align-content: Space-between;
+	Justify-content: Space-between;
+}
+
+
+
+@mixin Height_Fit
+{
+	@include AutoLayoutCore;
+	Flex-grow: 0;
+}
+
+@mixin Height_Fill
+{
+	@include AutoLayoutCore;
+	Flex-grow: 1;
+}
+
+@mixin Width_Fit
+{
+	@include AutoLayoutCore;
+	Flex-grow: 0;
+}
+
+@mixin Width_Fill
+{
+	@include AutoLayoutCore;
+	Flex-grow: 1;
+}
+
+
+
+//
+
+
+
+[AutoLayout]
+{
+	Display: Flex;
+}
+
+
+
+[Direction="Horizontal"]
+{
+	Flex-direction: Row;
+
+
+
+	& > [Width="Fit"]
+	{
+		Flex-grow: 0;
+	}
+
+	& > [Width="Fill"]
+	{
+		Flex-grow: 1;
+	}
+
+	& > [Height="Fit"]
+	{
+		Height: Fit-content;
+	}
+
+	& > [Height="Fill"]
+	{
+		Height: -webkit-fill-available;
+	}
+
+
+
+	&[Packing="Space between"]
+	{
+		Justify-content: Space-between;
+	}
+
+
+
+	&[AlignX="Left"]
+	{
+		Justify-content: Start;
+	}
+
+	&[AlignX="Center"]
+	{
+		Justify-content: Center;
+	}
+
+	&[AlignX="End"]
+	{
+		Justify-content: End;
+	}
+
+	&[AlignY="Bottom"]
+	{
+		Align-items: Bottom;
+	}
+
+	&[AlignY="Baseline"]
+	{
+		Align-items: Baseline;
+	}
+
+	&[AlignY="Center"]
+	{
+		Align-items: Center;
+	}
+
+	&[AlignY="Top"]
+	{
+		Align-items: Top;
+	}
+}
+
+[Direction="Vertical"]
+{
+	Flex-direction: Column;
+
+
+
+	& > [Width="Fit"]
+	{
+		Width: Fit-content;
+	}
+
+	& > [Width="Fill"]
+	{
+		Width: -webkit-fill-available;
+	}
+
+	& > [Height="Fit"]
+	{
+		Flex-grow: 0;
+	}
+
+	& > [Height="Fill"]
+	{
+		Flex-grow: 1;
+	}
+
+
+
+	&[Packing="Space between"]
+	{
+		Align-items: Space-between;
+	}
+
+
+
+	&[AlignX="Left"]
+	{
+		Align-items: Start;
+	}
+
+	&[AlignX="Center"]
+	{
+		Align-items: Center;
+	}
+
+	&[AlignX="End"]
+	{
+		Align-items: End;
+	}
+
+	&[AlignY="Bottom"]
+	{
+		Justify-content: Bottom;
+	}
+
+	&[AlignY="Baseline"]
+	{
+		Justify-content: Baseline;
+	}
+
+	&[AlignY="Center"]
+	{
+		Justify-content: Center;
+	}
+
+	&[AlignY="Top"]
+	{
+		Justify-content: Top;
+	}
+}

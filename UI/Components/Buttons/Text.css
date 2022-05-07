@@ -1,0 +1,182 @@
+[AutoLayout] {
+  Display: Flex;
+}
+
+[Direction="Horizontal"] {
+  Flex-direction: Row;
+}
+
+[Direction="Horizontal"] [Width="Fit"] {
+  Flex-grow: 0;
+}
+
+[Direction="Horizontal"] [Width="Fill"] {
+  Flex-grow: 1;
+}
+
+[Direction="Horizontal"] [Height="Fit"] {
+  Height: Auto;
+}
+
+[Direction="Horizontal"] [Height="Fill"] {
+  Height: -webkit-fill-available;
+}
+
+[Direction="Horizontal"][Packing="Space between"] {
+  Justify-content: Space-between;
+}
+
+[Direction="Horizontal"] [AlignX="Left"] {
+  Justify-content: Start;
+}
+
+[Direction="Horizontal"] [AlignX="Center"] {
+  Justify-content: Center;
+}
+
+[Direction="Horizontal"] [AlignX="End"] {
+  Justify-content: End;
+}
+
+[Direction="Horizontal"] [AlignY="Bottom"] {
+  Align-items: Bottom;
+}
+
+[Direction="Horizontal"] [AlignY="Baseline"] {
+  Align-items: Baseline;
+}
+
+[Direction="Horizontal"] [AlignY="Center"] {
+  Align-items: Center;
+}
+
+[Direction="Horizontal"] [AlignY="Top"] {
+  Align-items: Top;
+}
+
+[Direction="Vertical"] {
+  Flex-direction: Column;
+}
+
+[Direction="Vertical"] [Width="Fit"] {
+  Width: Auto;
+}
+
+[Direction="Vertical"] [Width="Fill"] {
+  Width: -webkit-fill-available;
+}
+
+[Direction="Vertical"] [Height="Fit"] {
+  Flex-grow: 0;
+}
+
+[Direction="Vertical"] [Height="Fill"] {
+  Flex-grow: 1;
+}
+
+[Direction="Vertical"][Packing="Space between"] {
+  Align-items: Space-between;
+}
+
+[Direction="Vertical"][AlignX="Left"] {
+  Align-items: Start;
+}
+
+[Direction="Vertical"][AlignX="Center"] {
+  Align-items: Center;
+}
+
+[Direction="Vertical"][AlignX="End"] {
+  Align-items: End;
+}
+
+[Direction="Vertical"][AlignY="Bottom"] {
+  Justify-content: Bottom;
+}
+
+[Direction="Vertical"][AlignY="Baseline"] {
+  Justify-content: Baseline;
+}
+
+[Direction="Vertical"][AlignY="Center"] {
+  Justify-content: Center;
+}
+
+[Direction="Vertical"][AlignY="Top"] {
+  Justify-content: Top;
+}
+
+Button.Text {
+  Padding: 0;
+  Font-Size: 100%;
+  Border: None;
+  Background: None;
+  Text-Align: Initial;
+  Display: Flex;
+  Display: Flex;
+  Justify-content: Start;
+  Display: Flex;
+  Align-items: Start;
+  Display: Flex;
+  Flex-Direction: Row;
+  Display: Flex;
+  Align-content: Begin;
+  Justify-content: Begin;
+  Display: Flex;
+  Flex-grow: 0;
+  Display: Flex;
+  Flex-grow: 0;
+  Display: Flex;
+  Flex-grow: 0;
+  Padding: 3px 5px;
+  Border-radius: 5px;
+}
+
+Button.Text.Roomy {
+  Padding: 7.5px;
+}
+
+Button.Text,
+Button.Text.Icon > Span {
+  Font-weight: 500;
+  Font-size: 14px;
+}
+
+Button.Text:Hover {
+  Background-color: Var(--Gray05);
+}
+
+Button.Text.Icon {
+  Display: Flex;
+  Align-items: Center;
+  Gap: 7.5px;
+}
+
+Button.Text.Icon > Custom-icon {
+  --Scale: 20px;
+}
+
+Button.Text.Main {
+  Color: Var(--Main-UI);
+  --Ripple-Color: Var(--Main-UI);
+}
+
+Button.Text.Main:Hover {
+  Background-color: Var(--Main-UI-Transparent);
+}
+
+Button.Text.Gray:not(:hover),
+Button.Text.Gray:not(:hover) > Span,
+Button.Text.Gray:not(:hover) > Custom-icon * {
+  Transition: 100ms;
+  Color: Var(--Gray-80);
+  Fill: Var(--Gray-80);
+}
+
+Button.Text.Outlined {
+  Border: 1px Solid Var(--Gray-20);
+}
+
+Button.Text.Outlined.Main {
+  Border-Color: HSLA(146, 70%, 30%, 25%);
+}

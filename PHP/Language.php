@@ -1,18 +1,18 @@
 <?
 function Language_Get()
 {
-    $Language = strtoupper($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+	$Language = strtoupper($_SERVER['HTTP_ACCEPT_LANGUAGE']);
 
-    if (!function_exists('str_contains'))
-    {
-        function str_contains($Haystack, $Needle)
-        {
-            return $Needle !== '' && mb_strpos($Haystack, $Needle) !== false;
-        }
-    }
+	if (!function_exists('str_contains'))
+	{
+		function str_contains($Haystack, $Needle)
+		{
+			return $Needle !== '' && mb_strpos($Haystack, $Needle) !== false;
+		}
+	}
 
-    if (str_contains($Language, 'RU') || str_contains($Language, 'UA') || str_contains($Language, 'BE') || str_contains($Language, 'KK'))
-        return 1;
-    else
-        return 0;
+	if (str_contains($Language, 'RU') || str_contains($Language, 'UA') || str_contains($Language, 'BE') || str_contains($Language, 'KK'))
+		return 1;
+	else
+		return 0;
 };

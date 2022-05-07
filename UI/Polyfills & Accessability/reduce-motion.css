@@ -1,8 +1,8 @@
-@media (prefers-reduced-motion: reduce)
+@media (Prefers-Reduced-Motion: Reduce)
 {
-    *
-    {
-        transition: none !important;
-        animation: none !important;
-    }
+	*
+	{
+		Transition: None !Important;
+		Animation: None !Important;
+	}
 }

@@ -1,0 +1,21 @@
+HR
+{
+	Margin: 0;
+	Border: None;
+	Border-Right: Var(--Border);
+	Border-Bottom: Var(--Border);
+}
+
+
+
+HR.Horizontal
+{
+	Width: 100%;
+	Height: 0;
+}
+
+HR.Vertical
+{
+	Width: 0;
+	Height: 100%;
+}

@@ -1,37 +1,46 @@
-function SendRequest(URL, Type, Data, Callback)
+class FetchRequest
 {
-    const XHR = new XMLHttpRequest();
+	constructor(URL, Type, Data, Callback)
+	{
+		this.XHR = new XMLHttpRequest();
 
-    if (Type === 'GET')
-    {
-        if (Object.keys(Data).length !== 0)
-        {
-            let First = true;
-            for (let loop_Field in Data)
-            {
-                URL += `${First ? '?' : '&'}${loop_Field}=${Data[loop_Field]}`;
-                First = false;
-            };
-        };
+		if (Type === 'GET')
+		{
+			if (Object.keys(Data).length !== 0)
+			{
+				let First = true;
+				for (let loop_Field in Data)
+				{
+					URL += `${First ? '?' : '&'}${loop_Field}=${Data[loop_Field]}`;
+					First = false;
+				};
+			};
 
-        XHR.open('GET', URL);
-        XHR.send();
-    }
-    else
-    {
-        const Form = new FormData();
-        for (let loop_Field in Data)
-            Form.append(loop_Field, Data[loop_Field]);
+			this.XHR.open('GET', URL);
+			this.XHR.send();
+		}
+		else
+		{
+			const Form = new FormData();
+			for (let loop_Field in Data)
+				Form.append(loop_Field, Data[loop_Field]);
 
-        XHR.open('POST', URL);
-        XHR.send(Form);
-    };
+			this.XHR.open('POST', URL);
+			this.XHR.send(Form);
+		};
 
 
-    if (Callback !== undefined)
-        XHR.onreadystatechange = () =>
-        {
-            if (XHR.readyState === 4)
-                Callback({ 'Code': XHR.status, 'Message': XHR.statusText }, XHR.responseText)
-        };
+		if (Callback !== undefined)
+			this.XHR.onreadystatechange = () =>
+			{
+				if (this.XHR.readyState === 4)
+					Callback({ 'Code': (this.Aborted ? 'Aborted' : this.XHR.status), 'Message': this.XHR.statusText }, this.XHR.responseText)
+			};
+	}
+
+	Abort()
+	{
+		this.Aborted = true;
+		this.XHR.abort();
+	}
 }

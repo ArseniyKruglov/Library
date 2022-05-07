@@ -1,13 +1,11 @@
-*
-{
-    color: var(--Text);
-    font-size: 16px;
+* {
+  Color: Var(--Text);
+  Font-Size: 16px;
 }
 
 .Ellipsis,
-.Ellipsis *
-{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.Ellipsis * {
+  Overflow: Hidden;
+  Text-Overflow: Ellipsis;
+  White-Space: Nowrap;
 }

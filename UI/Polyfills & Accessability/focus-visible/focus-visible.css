@@ -1,4 +1,4 @@
-.js-focus-visible :focus:not(.focus-visible)
+.Js-Focus-Visible :Focus:Not(.Focus-Visible)
 {
-    outline: none;
+	Outline: None;
 }

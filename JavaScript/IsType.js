@@ -1,34 +1,35 @@
 function IsNumber(Variable)
 {
-    return isNaN(Variable) === false;
+	return isNaN(Variable) === false;
 }
 
 function IsInteger(Variable)
 {
-    return IsNumber(Variable) && Number.isInteger(Variable);
+	return IsNumber(Variable) && Number.isInteger(Variable);
 }
 
 function IsString(Variable)
 {
-    return (typeof Variable === 'string' || Variable instanceof String);
+	return (typeof Variable === 'string' || Variable instanceof String);
 }
 
 function IsBoolean(Variable)
 {
-    return (typeof Variable === 'boolean' || Variable instanceof Boolean);
+	return (typeof Variable === 'boolean' || Variable instanceof Boolean);
 }
 
 function IsObject(Variable)
 {
-    return (typeof Variable === 'object' || Variable instanceof Object);
+	const Type = typeof Variable;
+	return Type === 'function' || Type === 'object' && !!Variable;
 }
 
 function IsDate(Variable)
 {
-    return Variable instanceof Date;
+	return Variable instanceof Date;
 }
 
 function IsFunction(Variable)
 {
-    return Variable instanceof Function;
+	return Variable instanceof Function;
 }

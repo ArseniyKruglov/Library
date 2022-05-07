@@ -1,0 +1,27 @@
+Body
+{
+	Color-Scheme: Light;
+
+	--Text: #000000;
+	--Text-Inversed: #FFFFFF;
+
+	@for $i from 1 to 20
+	{
+		$Power: $i * 5;
+		--Gray-#{$Power}: HSL(220, 10%, #{100 - $Power}%);
+	}
+
+	@media (Prefers-Color-Scheme: Dark)
+	{
+		Color-Scheme: Dark;
+
+		--Text: #FFFFFF;
+		--Text-Inversed: #000000;
+
+		@for $i from 1 to 20
+		{
+			$Power: $i * 5;
+			--Gray-#{$Power}: HSL(220, 10%, #{100 - $Power}%);
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.Processing {
+  Position: Relative;
+}
+
+.Processing * {
+  Pointer-events: None;
+  User-select: None;
+}
+
+.Processing .Fog {
+  Position: Absolute;
+  Top: 0;
+  Left: 0;
+  Width: 100%;
+  Height: 100%;
+  Z-index: 2;
+  /*  */
+  Opacity: 0%;
+  Background: Var(--Background00);
+  Transition: Opacity 500ms;
+}
+
+.Processing .mdl-progress.mdl-js-progress.mdl-progress__indeterminate {
+  Position: Absolute;
+  Top: 0;
+  Left: 0;
+  Width: 100%;
+  Z-index: 3;
+}

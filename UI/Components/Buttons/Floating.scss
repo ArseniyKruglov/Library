@@ -1,0 +1,43 @@
+@import 'Styleless.scss';
+@import '../../AutoLayout.scss';
+
+Button.Floating
+{
+	--Scale: 56px;
+	--Scale-Icon: Calc(Var(--Scale) * 2 / 3);
+
+	@include Button_Styleless;
+	@include AutoLayout;
+	@include AlignX_Center;
+	@include AlignY_Center;
+	Width: Var(--Scale);
+	Height: Var(--Scale);
+	Border-Radius: 50%;
+	Position: Fixed;
+	Right: Var(--Padding);
+	Bottom: Calc(Var(--Padding) + Var(--PaddingBottom, 0px));
+	Transition: Background-Color 100ms;
+
+
+
+	SVG
+	{
+		Width: Var(--Scale-Icon);
+		Height: Var(--Scale-Icon);
+	}
+
+	&:hover
+	{
+		Background-Color: Var(--Gray-20);
+	}
+
+	@media (Min-Width: 700px)
+	{
+		--Padding: 50px;
+	}
+
+	@media not all and (Min-Width: 700px)
+	{
+		--Padding: 25px;
+	}
+}

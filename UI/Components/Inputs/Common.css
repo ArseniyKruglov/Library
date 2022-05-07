@@ -1,0 +1,62 @@
+.InputContainer
+{
+	Display: Inline-Flex;
+}
+
+.InputContainer > *
+{
+	Border: None;
+	Background: None;
+	/* Min-Width: Max-Content; */
+	Width: 100%;
+}
+
+
+
+.InputContainer > *
+{
+	Text-Overflow: Ellipsis;
+}
+
+
+
+.InputContainer > *:Focus
+{
+	Outline: None;
+}
+
+
+
+.InputContainer > *
+{
+	Margin: 5px;
+}
+
+.InputContainer.Roomy > *
+{
+	Margin: 14px;
+}
+
+
+
+/* TO DO: !important */
+
+.InputContainer.Top
+{
+	Border-Radius: 25px 25px 5px 5px !important;
+}
+
+.InputContainer.Right
+{
+	Border-Radius: 5px 25px 25px 5px !important;
+}
+
+.InputContainer.Bottom
+{
+	Border-Radius: 5px 5px 25px 25px !important;
+}
+
+.InputContainer.Left
+{
+	Border-Radius: 25px 5px 5px 25px !important;
+}

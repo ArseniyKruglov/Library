@@ -1,0 +1,14 @@
+@mixin Reset_A
+{
+	Text-decoration: None;
+	Color: Inherit;
+}
+
+@mixin Reset_Button
+{
+	Padding: 0;
+	Font-Size: 100%;
+	Border: None;
+	Background: None;
+	Text-Align: Initial;
+}

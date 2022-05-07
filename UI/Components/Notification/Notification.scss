@@ -1,0 +1,59 @@
+@import '../../AutoLayout.scss';
+@import '../../Effects/Levels.scss';
+
+#Notifications
+{
+	Position: Absolute;
+	Top: 0;
+	Right: 0;
+	Z-Index: 10;
+	Max-Height: unquote('Calc(100% - 10px * 2)');		/* SASS, really? */
+	Padding: 10px;
+	Overflow: Auto;
+
+	.Notification
+	{
+		@include Level-2;
+		Gap: 10px;
+		Border-radius: 5px;
+		Padding: 15px;
+		Transition: Opacity 250ms, Height 250ms, Padding 250ms;
+
+		&:not(:last-child)
+		{
+			Margin-bottom: 10px;
+		}
+
+		&.Closing
+		{
+			Opacity: 0;
+			Height: 0 !important;
+			Padding: 0 15px;
+			Margin: 0;
+			Overflow: Hidden;
+		}
+
+		Custom-Icon
+		{
+			--Scale: 36px;
+		}
+
+		&.Type-Good > Custom-Icon
+		{
+			--Color: Var(--Main-UI);
+		}
+
+		&.Type-Bad > Custom-Icon
+		{
+			--Color: Brown;
+		}
+
+
+
+		Span
+		{
+			Max-Width: 190px;
+			Max-Height: 400px;
+		}
+	}
+}
