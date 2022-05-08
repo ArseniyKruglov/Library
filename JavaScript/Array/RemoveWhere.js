@@ -1,18 +1,18 @@
-Array.prototype.removeWhere = function(oObject, bSingle)
+Array.prototype.removeWhere = function(Object, Single)
 {
-	if (bSingle === true)
+	if (Single === true)
 	{
 		for (let i = 0; i < this.length; i++)
 		{
-			let bRemove = true;
-			for (let loop_sKey in oObject)
-				if (this[i][loop_sKey] !== oObject[loop_sKey])
+			let Remove = true;
+			for (let Key in Object)
+				if (this[i][Key] !== Object[Key])
 				{
-					bRemove = false;
+					Remove = false;
 					break;
 				};
 
-			if (bRemove === true)
+			if (Remove === true)
 			{
 				this.splice(i--, 1);
 				break;
@@ -23,15 +23,15 @@ Array.prototype.removeWhere = function(oObject, bSingle)
 	{
 		for (let i = 0; i < this.length; i++)
 		{
-			let bRemove = true;
-			for (let loop_sKey in oObject)
-				if (this[i][loop_sKey] !== oObject[loop_sKey])
+			let Remove = true;
+			for (let Key in Object)
+				if (this[i][Key] !== Object[Key])
 				{
-					bRemove = false;
+					Remove = false;
 					break;
 				};
 
-			if (bRemove === true)
+			if (Remove === true)
 				this.splice(i--, 1);
 		};
 	};

@@ -9,11 +9,11 @@ class ProcessingEffect
 	{
 		this.Element.classList.add('Processing');
 
-		this.Fog = HTMLToElement(`<Div Class='Fog'></Div>`);
+		this.Fog = HTMLToElement(`<Div Class='Fog'></Div>`)[0];
 		this.Element.append(this.Fog);
 		setTimeout(() =>  this.Fog.style.opacity = '75%', 0);
 
-		this.ProgressBar = HTMLToElement(`<Div Class='mdl-progress mdl-js-progress mdl-progress__indeterminate'></Div>`);
+		this.ProgressBar = HTMLToElement(`<Div Class='mdl-progress mdl-js-progress mdl-progress__indeterminate'></Div>`)[0];
 		this.Element.append(this.ProgressBar);
 		componentHandler.upgradeDom();
 	}

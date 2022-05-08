@@ -1,8 +1,0 @@
-.Overlay.Window > .Default
-{
-	Width: 400px;
-	Max-Width: Calc(100% - 10px);
-	Max-Height: Calc(100% - 40px);
-	Overflow: Auto;
-	Margin: 5px;
-}

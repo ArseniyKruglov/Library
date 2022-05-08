@@ -1,8 +1,0 @@
-@media (Prefers-Reduced-Motion: Reduce)
-{
-	*
-	{
-		Transition: None !Important;
-		Animation: None !Important;
-	}
-}

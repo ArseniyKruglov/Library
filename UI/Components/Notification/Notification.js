@@ -21,7 +21,7 @@ function Notify(Text, Class = 'OK', Icon = 'Chat Bubble')
 	(`<Div Class='Notification Type-${Class}' AutoLayout Direction='Horizontal' AlignY='Center' Width='Fit'>
 		<Custom-icon Icon='${Icon}'></Custom-Icon>
 		<Span>${Text}</Span>
-	  </Div>`);
+	  </Div>`)[0];
 	Element.addEventListener('click', () => Remove());
 
 	Container.append(Element);

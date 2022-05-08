@@ -1,39 +1,39 @@
-Array.prototype.selectWhere = function(oObject, bSingle)
+Array.prototype.selectWhere = function(Object, Single)
 {
-	if (bSingle === true)
+	if (Single === true)
 	{
 		for (let i = 0; i < this.length; i++)
 		{
-			let bSelect = true;
-			for (let loop_sKey in oObject)
-				if (this[i][loop_sKey] !== oObject[loop_sKey])
+			let Select = true;
+			for (let Key in Object)
+				if (this[i][Key] !== Object[Key])
 				{
-					bSelect = false;
+					Select = false;
 					break;
 				};
 
-			if (bSelect === true)
+			if (Select === true)
 				return this[i];
 		};
 	}
 	else
 	{
-		let aArray = [];
+		let Array = [];
 
 		for (let i = 0; i < this.length; i++)
 		{
-			let bSelect = true;
-			for (let loop_sKey in oObject)
-				if (this[i][loop_sKey] !== oObject[loop_sKey])
+			let Select = true;
+			for (let Key in Object)
+				if (this[i][Key] !== Object[Key])
 				{
-					bSelect = false;
+					Select = false;
 					break;
 				};
 
-			if (bSelect === true)
-				aArray.push(this[i]);
+			if (Select === true)
+				Array.push(this[i]);
 		};
 
-		return aArray;
+		return Array;
 	};
 }

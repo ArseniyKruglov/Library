@@ -5,7 +5,7 @@ function Select_Resize(Element)
 		`<Select>
 			<Option>${Element.options[Element.selectedIndex].text}</Option>
 		 </Select>`
-	);
+	)[0];
 
 	Element.hidden = true;
 	Element.after(TempSelect);
