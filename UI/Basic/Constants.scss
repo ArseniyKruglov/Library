@@ -28,9 +28,11 @@
 
 
 
-	$Hue: 145;
+	// Project-specific
+	
+	$Hue: 210;
 	$Saturation: 50%;
-	$Lightness: 36%;
+	$Lightness: 50%;
 
 	--Main: HSL(#{$Hue}, #{$Saturation}, #{$Lightness});
 	--Main-UI: HSL(#{$Hue}, #{$Saturation * 1.1}, #{$Lightness});
