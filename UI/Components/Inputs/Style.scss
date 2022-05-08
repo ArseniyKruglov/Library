@@ -1,0 +1,110 @@
+.InputContainer
+{
+	Display: Inline-Flex;
+
+	& > *
+	{
+		Border: None;
+		Background: None;
+		Width: 100%;
+		Text-overflow: Ellipsis;
+	}
+
+	& > *:focus
+	{
+		Outline: None;
+	}
+
+
+
+	&:not(.Roomy) > *
+	{
+		Margin: 5px;
+	}
+
+	&.Roomy > *
+	{
+		Margin: 14px;
+	}
+
+	&:not(.Round)
+	{
+		Border-Radius: 5px;
+	}
+
+	&.Round
+	{
+		Border-Radius: 50px;
+	}
+
+	&.Outlined
+	{
+		Border: 1px Solid Var(--Gray-20);
+
+		&:Hover,
+		&:Focus-Within
+		{
+			Border: 1px Solid Var(--Gray-80);
+		}
+	}
+
+	&:not(.Outlined)
+	{
+		&:Hover,
+		&:Focus-Within
+		{
+			Background-Color: Var(--Gray-20);
+		}
+	}
+
+	&.Bold > *
+	{
+		Font-Weight: 500;
+	}
+
+
+
+	&.Top
+	{
+		Border-Radius: 25px 25px 5px 5px;
+	}
+
+	&.Right
+	{
+		Border-Radius: 5px 25px 25px 5px;
+	}
+
+	&.Bottom
+	{
+		Border-Radius: 5px 5px 25px 25px;
+	}
+
+	&.Left
+	{
+		Border-Radius: 25px 5px 5px 25px;
+	}
+
+
+
+	& > Input[Type="Date"]
+	{
+		Margin: 5px 10px;
+	}
+
+	&.Roomy > Input[Type="Date"]
+	{
+		Margin: 14px 20px;
+	}
+
+
+
+	& > Input[Type="Datetime-Local"]
+	{
+		Margin: 5px 10px;
+	}
+
+	&.Roomy > Input[Type="Datetime-Local"]
+	{
+		Margin: 14px 20px;
+	}
+}

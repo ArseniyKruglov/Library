@@ -1,12 +1,12 @@
-@import 'Styleless.scss';
-@import '../../AutoLayout.scss';
+@import '../../Basic/Reset.scss';
+@import '../../Basic/AutoLayout.scss';
 
 Button.Floating
 {
 	--Scale: 56px;
 	--Scale-Icon: Calc(Var(--Scale) * 2 / 3);
 
-	@include Button_Styleless;
+	@include Reset_Button;
 	@include AutoLayout;
 	@include AlignX_Center;
 	@include AlignY_Center;

@@ -1,14 +1,25 @@
-@import '../../AutoLayout.scss';
-@import '../../Reset.scss';
-@import '../../Basic/Border.scss';
+@import '../../Basic/Text.scss';
+@import '../../Basic/Reset.scss';
 
 Button.Text
 {
 	@include Reset_Button;
-	@include AutoLayout;
-	@include Width_Fit;
+}
+
+A.Text
+{
+	@include Reset_A;
+}
+
+Button.Text,
+A.Text
+{
+	Width: Fit-content;
+	Max-width: -webkit-fill-available;		// TO DO
 	Padding: 3px 5px;
 	Border-radius: 5px;
+	Transition: Color 25ms, Background-color 25ms;
+	@include Ellipsis;
 
 
 
@@ -28,7 +39,7 @@ Button.Text
 
 	&:Hover
 	{
-		Background-color: Var(--Gray05);
+		Background-color: Var(--Gray-5);
 	}
 
 
@@ -56,6 +67,7 @@ Button.Text
 	&.Main:Hover
 	{
 		Background-color: Var(--Main-UI-Transparent);
+		Color: Var(--Main-UI-Hover) !important;
 	}
 
 
@@ -64,7 +76,6 @@ Button.Text
 	&.Gray:not(:hover) > Span,
 	&.Gray:not(:hover) > Custom-icon *
 	{
-		Transition: 100ms;
 		Color: Var(--Gray-80);
 		Fill: Var(--Gray-80);
 	}
@@ -73,11 +84,11 @@ Button.Text
 
 	&.Outlined
 	{
-		@include Border;
+		Border: 1px Solid Var(--Gray-20);
 
 		&.Main
 		{
-			Border-Color: HSLA(146, 70%, 30%, 25%);
+			Border-color: HSLA(146, 70%, 30%, 25%);
 		}
 	}
 }

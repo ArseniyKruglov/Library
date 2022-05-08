@@ -1,0 +1,12 @@
+:root
+{
+	--Font-Title: 'Playfair Display';
+	--Font-Text: 'Lora';
+	--Font-UI: 'Google Sans';
+	// --Font-Monospace: 'Space Mono', 'JetBrains Mono', Monospace;
+}
+
+*
+{
+	Font-Family: Var(--Font-Text);
+}

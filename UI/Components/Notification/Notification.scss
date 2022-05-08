@@ -1,4 +1,3 @@
-@import '../../AutoLayout.scss';
 @import '../../Effects/Levels.scss';
 
 #Notifications
@@ -7,7 +6,7 @@
 	Top: 0;
 	Right: 0;
 	Z-Index: 10;
-	Max-Height: unquote('Calc(100% - 10px * 2)');		/* SASS, really? */
+	Max-Height: unquote('Calc(100% - 10px * 2)');
 	Padding: 10px;
 	Overflow: Auto;
 

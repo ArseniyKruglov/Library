@@ -1,4 +1,4 @@
-Body
+:root
 {
 	Color-Scheme: Light;
 
@@ -24,4 +24,16 @@ Body
 			--Gray-#{$Power}: HSL(220, 10%, #{100 - $Power}%);
 		}
 	}
+
+
+
+
+	$Hue: 145;
+	$Saturation: 50%;
+	$Lightness: 36%;
+
+	--Main: HSL(#{$Hue}, #{$Saturation}, #{$Lightness});
+	--Main-UI: HSL(#{$Hue}, #{$Saturation * 1.1}, #{$Lightness});
+	--Main-UI-Hover: HSL(#{$Hue}, #{$Saturation * 1.1}, #{$Lightness * 0.75});
+	--Main-UI-Transparent: HSLA(#{$Hue}, #{$Saturation * 1.1}, #{$Lightness}, 3.5%);
 }
