@@ -2,18 +2,20 @@ HR
 {
 	Margin: 0;
 	Border: None;
-	Border-Right: 1px Solid Var(--Gray-20);
-	Border-Bottom: 1px Solid Var(--Gray-20);
 
-	& > .Horizontal
+	& > .Horizontal,
+	[AutoLayout][Direction="Vertical"] > &
 	{
 		Width: 100%;
 		Height: 0;
+		Border-Bottom: 1px Solid Var(--Gray-20);
 	}
 
-	& > .Vertical
+	& > .Vertical,
+	[AutoLayout][Direction="Horizontal"] > &
 	{
 		Width: 0;
 		Height: 100%;
+		Border-Right: 1px Solid Var(--Gray-20);
 	}
 }
