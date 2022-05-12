@@ -12,3 +12,10 @@
 	Background: None;
 	Text-Align: Initial;
 }
+
+@mixin Reset_H
+{
+	Margin: 0;
+	Font-weight: 400;
+	Font-size: 16px;
+}
