@@ -19,6 +19,7 @@ A.Text
 	Padding: 3px 5px;
 	Border-radius: 5px;
 	Transition: Color 25ms, Background-color 25ms;
+	Font-family: Var(--Font-UI);
 	@include Ellipsis;
 
 
