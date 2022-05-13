@@ -14,74 +14,61 @@ A.Text
 Button.Text,
 A.Text
 {
+	--Button-Color: Var(--Text);
+	--Button-Color-Background: Var(--Gray-5);
+
+	&.Main
+	{
+		--Button-Color: Var(--Main-UI);
+		--Button-Color-Background: Var(--Main-UI-Transparent);
+	}
+
+	&.Gray:not(:hover)
+	{
+		--Button-Color: Var(--Gray-70);
+	}
+
+
+
 	Width: Fit-content;
-	Max-width: -webkit-fill-available;		// TO DO
+	Max-width: -webkit-fill-available;		// TO DO: Точно?
 	Padding: 3px 5px;
 	Border-radius: 5px;
 	Transition: Color 25ms, Background-color 25ms;
-	Font-family: Var(--Font-UI);
+	--Ripple-Color: Var(--Button-Color);
 	@include Ellipsis;
-
-
 
 	&.Roomy
 	{
 		Padding: 7.5px;
 	}
 
+	&:Hover
+	{
+		Background-color: Var(--Button-Color-Background);
+	}
+
 	&,
 	&.Icon > Span
 	{
-		Font-weight: 500;
 		Font-size: 14px;
+		Font-weight: 500;
+		Font-family: Var(--Font-UI);
+		Color: Var(--Button-Color);
 	}
-
-
-
-	&:Hover
-	{
-		Background-color: Var(--Gray-5);
-	}
-
-
 
 	&.Icon
 	{
 		Display: Flex;
 		Align-items: Center;
 		Gap: 7.5px;
+
+		& > Custom-icon
+		{
+			--Color: Var(--Button-Color) !important;
+			--Scale: 20px;
+		}
 	}
-
-	&.Icon > Custom-icon
-	{
-		--Scale: 20px;
-	}
-
-
-
-	&.Main
-	{
-		Color: Var(--Main-UI);
-		--Ripple-Color: Var(--Main-UI);
-	}
-
-	&.Main:Hover
-	{
-		Background-color: Var(--Main-UI-Transparent);
-		Color: Var(--Main-UI-Hover) !important;
-	}
-
-
-
-	&.Gray:not(:hover),
-	&.Gray:not(:hover) > Span,
-	&.Gray:not(:hover) > Custom-icon *
-	{
-		Color: Var(--Gray-80);
-		Fill: Var(--Gray-80);
-	}
-
-
 
 	&.Outlined
 	{
