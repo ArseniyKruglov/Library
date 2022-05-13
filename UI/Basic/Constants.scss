@@ -18,6 +18,10 @@
 		--Gray-#{$Power}: HSL(220, 10%, #{100 - $Power}%);
 	}
 
+	--Background-00: #FFFFFF;
+	--Background-01: #FFFFFF;
+	--Background-02: #FFFFFF;
+
 	@media (Prefers-Color-Scheme: Dark)
 	{
 		Color-Scheme: Dark;
@@ -30,6 +34,10 @@
 			$Power: $i * 5;
 			--Gray-#{$Power}: HSL(220, 10%, #{$Power}%);
 		}
+
+		--Background-00: Var(--Gray-5);
+		--Background-01: Var(--Gray-10);
+		--Background-02: Var(--Gray-15);
 	}
 
 	--Main: HSL(Var(--Hue), Var(--Saturation), Var(--Lightness));

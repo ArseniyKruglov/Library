@@ -7,9 +7,9 @@ Button.Floating
 	--Scale-Icon: Calc(Var(--Scale) * 2 / 3);
 
 	@include Reset_Button;
-	@include AutoLayout;
-	@include AlignX_Center;
-	@include AlignY_Center;
+	Display: Flex;
+	Align-items: Center;
+	Justify-content: Center;
 	Width: Var(--Scale);
 	Height: Var(--Scale);
 	Border-Radius: 50%;
