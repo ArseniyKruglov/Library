@@ -59,14 +59,25 @@ A.Text
 
 	&.Icon
 	{
-		Display: Flex;
+		Display: Inline-flex;
 		Align-items: Center;
 		Gap: 7.5px;
 
 		& > Custom-icon
 		{
-			--Color: Var(--Button-Color) !important;
-			--Scale: 20px;
+			--Icon-Color: Var(--Button-Color);
+			--Icon-Scale: 20px;
+		}
+
+		& > SVG
+		{
+			Width: 20px;
+			Height: 20px;
+
+			*
+			{
+				Fill: Var(--Button-Color);
+			}
 		}
 	}
 
