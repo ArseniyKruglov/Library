@@ -7,17 +7,7 @@ class RoundButton extends HTMLElement
 						<Span Class='Backlight'></Span>
 					 </Button>`;
 
-		const PassAtributes = (Attributes, To) =>
-		{
-			for (let Attribute of this.getAttributeNames())
-				if (Attributes.includes(Attribute.toLowerCase()) === true)
-				{
-					To.setAttribute(Attribute, this.getAttribute(Attribute));
-					this.removeAttribute(Attribute);
-				};
-		}
-
-		PassAtributes(['type', 'tabindex'], this.children[0]);
+		PassAtributes(['type', 'tabindex'], this, this.children[0]);
 
 
 		this.addEventListener('click', () =>

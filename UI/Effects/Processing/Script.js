@@ -9,25 +9,23 @@ class ProcessingEffect
 	{
 		this.Element.classList.add('Processing');
 
-		this.Fog = HTMLToElements(`<Div Class='Fog'></Div>`)[0];
+		this.Fog = HTMLToElements(
+			`<Div Class='Fog' AutoLayout Direction='Horizontal' AlignX='Center' AlignY='Center'>
+				<Div Class='mdl-spinner mdl-js-spinner is-active'></Div>
+			 </Div>`)[0];
 		this.Element.append(this.Fog);
-		setTimeout(() =>  this.Fog.style.opacity = '75%', 0);
-
-		this.ProgressBar = HTMLToElements(`<Div Class='mdl-progress mdl-js-progress mdl-progress__indeterminate'></Div>`)[0];
-		this.Element.append(this.ProgressBar);
 		componentHandler.upgradeDom();
+		setTimeout(() =>  this.Fog.style.opacity = '75%', 0);
 	}
 
 	End()
 	{
-		this.ProgressBar.remove();
-
 		this.Fog.style.opacity = '0%';
 		setTimeout(() =>
 		{
 			this.Fog.remove();
 			this.Element.classList.remove('Processing');
-		}, 500);
+		}, 100);
 	}
 
 	Clean()

@@ -2,13 +2,12 @@
 
 Custom-Round-Button
 {
-	--Scale: 24px;
-	--Radius: Calc(Var(--Scale) + 12px);
-
-	--This-Scale: Var(--Scale);	 /* TO DO */
+	--Button-Scale: Var(--Scale, 24px);
 
 	--Icon-Color: Var(--Gray-80);
 	--Hover-Color: Var(--Gray-80);
+
+	----Radius: Calc(Var(--Button-Scale) + 12px);
 
 	& > Button
 	{
@@ -17,14 +16,12 @@ Custom-Round-Button
 		Display: Flex;
 		Align-Items: Center;
 		Justify-Content: Center;
-		Width: Var(--Radius);
-		Height: Var(--Radius);
+		Width: Var(----Radius);
+		Height: Var(----Radius);
 		Margin: -5px;
 
 		& > Custom-Icon
 		{
-			--Color: Var(--Icon-Color);
-			--Scale: Var(--This-Scale);
 			Z-Index: 1;
 		}
 
@@ -50,10 +47,10 @@ Custom-Round-Button
 
 			@keyframes Ripple_Button
 			{
-				0%		{ Opacity: 40%;	Clip-Path: Circle(Calc(Var(--Radius) / 4));	}
-				17.5%		{ Opacity: 25%;	Clip-Path: Circle(Calc(Var(--Radius) / 2));	}
+				0%		{ Opacity: 40%;	Clip-Path: Circle(Calc(Var(----Radius) / 4));	}
+				17.5%		{ Opacity: 25%;	Clip-Path: Circle(Calc(Var(----Radius) / 2));	}
 				50%		{ Opacity: 5%;									}
-				100%		{ Opacity: 0%;	Clip-Path: Circle(Calc(Var(--Radius) / 2));	}
+				100%		{ Opacity: 0%;	Clip-Path: Circle(Calc(Var(----Radius) / 2));	}
 			}
 		}
 
@@ -62,7 +59,7 @@ Custom-Round-Button
 			@media (hover: hover)
 			{
 				Opacity: 5%;
-				Clip-Path: Circle(Calc(Var(--Radius) / 2));
+				Clip-Path: Circle(Calc(Var(----Radius) / 2));
 			}
 		}
 	}

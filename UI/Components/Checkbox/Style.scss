@@ -1,0 +1,37 @@
+@import '../../Basic/Text.scss';
+
+Custom-checkbox > Label
+{
+	& > Input[type="checkbox"]
+	{
+		Display: None;
+
+		&:checked + Div > Custom-icon[Icon="Checkbox-Unchecked"],
+		&:not(:checked) + Div > Custom-icon[Icon="Checkbox-Checked"]
+		{
+			Display: None;
+		}
+	}
+
+	& > Div
+	{
+		Gap: 5px;
+
+		& > Custom-icon
+		{
+			--Icon-Scale: 20px;
+			--Icon-Color: Var(--Gray-70);
+		}
+
+		& > Div
+		{
+			Margin-bottom: -3.5px;		// TO DO: Мде
+			@include Ellipsis;
+
+			&:empty
+			{
+				Display: None;
+			}
+		}
+	}
+}

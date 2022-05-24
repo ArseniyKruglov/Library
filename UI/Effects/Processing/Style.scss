@@ -10,26 +10,17 @@
 
 	.Fog
 	{
-		Position: Absolute;
-		Top: 0;
-		Left: 0;
-		Width: 100%;
-		Height: 100%;
-		Z-index: 2;
-
-		/*  */
+		// TO DO: В библиотеку как @mixin Fullscreen
+			Position: Absolute;
+			Top: 0;
+			Left: 0;
+			Width: 100%;
+			Height: 100%;
+			Z-index: 10;	// TO DO: Разработать систему z-индексов
+		//
 
 		Opacity: 0%;
-		Background: Var(--Background00);
-		Transition: Opacity 500ms;
-	}
-
-	.mdl-progress.mdl-js-progress.mdl-progress__indeterminate
-	{
-		Position: Absolute;
-		Top: 0;
-		Left: 0;
-		Width: 100%;
-		Z-index: 3;
+		Background: Var(--Background-00);
+		Transition: Opacity 100ms;
 	}
 }
