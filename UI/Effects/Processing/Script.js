@@ -9,7 +9,7 @@ class ProcessingEffect
 	{
 		this.Element.classList.add('Processing');
 
-		this.Fog = HTMLToElements(
+		this.Fog = HTML_To_Elements(
 			`<Div Class='Fog' AutoLayout Direction='Horizontal' AlignX='Center' AlignY='Center'>
 				<Div Class='mdl-spinner mdl-js-spinner is-active'></Div>
 			 </Div>`)[0];

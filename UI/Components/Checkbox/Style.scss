@@ -4,12 +4,18 @@ Custom-checkbox > Label
 {
 	& > Input[type="checkbox"]
 	{
-		Display: None;
+		Position: Absolute;
+		Width: 0;
 
 		&:checked + Div > Custom-icon[Icon="Checkbox-Unchecked"],
 		&:not(:checked) + Div > Custom-icon[Icon="Checkbox-Checked"]
 		{
 			Display: None;
+		}
+
+		&:focus-visible + Div
+		{
+			Outline: Auto;
 		}
 	}
 
@@ -25,6 +31,7 @@ Custom-checkbox > Label
 
 		& > Div
 		{
+			Font-family: Var(--Font-UI);
 			Margin-bottom: -3.5px;		// TO DO: Мде
 			@include Ellipsis;
 

@@ -4,7 +4,7 @@ class CustomCheckbox extends HTMLElement
 	{
 		this.innerHTML =	`<Label>
 						<Input Type='Checkbox'>
-						<Div AutoLayout Direction='Horizontal' AlignY='Center'>
+						<Div AutoLayout Direction='Horizontal'>
 							<Custom-icon Icon='Checkbox-Unchecked'></Custom-icon>
 							<Custom-icon Icon='Checkbox-Checked'></Custom-icon>
 

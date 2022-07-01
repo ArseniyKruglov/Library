@@ -1,6 +1,6 @@
 function Select_Resize(Element)
 {
-	const TempSelect = HTMLToElements
+	const TempSelect = HTML_To_Elements
 	(
 		`<Select>
 			<Option>${Element.options[Element.selectedIndex].text}</Option>

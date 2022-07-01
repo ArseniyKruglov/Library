@@ -15,7 +15,7 @@
 	@for $i from 1 to 20
 	{
 		$Power: $i * 5;
-		--Gray-#{$Power}: HSL(220, 10%, #{100 - $Power}%);
+		--Gray-#{$Power}: HSL(Var(--Gray-Hue), Var(--Gray-Saturation), #{100 - $Power}%);
 	}
 
 	--Background-00: #FFFFFF;
@@ -32,7 +32,7 @@
 		@for $i from 1 to 20
 		{
 			$Power: $i * 5;
-			--Gray-#{$Power}: HSL(220, 10%, #{$Power}%);
+			--Gray-#{$Power}: HSL(Var(--Gray-Hue), Var(--Gray-Saturation), #{$Power}%);
 		}
 
 		--Background-00: Var(--Gray-5);

@@ -2,6 +2,11 @@
 {
 	Display: Inline-Flex;
 
+	*
+	{
+		Font-family: Var(--Font-UI);
+	}
+
 	& > *
 	{
 		Border: None;
@@ -19,7 +24,7 @@
 
 	&:not(.Roomy) > *
 	{
-		Margin: 5px;
+		Margin: 8px;
 	}
 
 	&.Roomy > *
@@ -39,12 +44,12 @@
 
 	&.Outlined
 	{
-		Border: 1px Solid Var(--Gray-20);
+		Border: 1px Solid Var(--Gray-15);
 
 		&:Hover,
 		&:Focus-Within
 		{
-			Border: 1px Solid Var(--Gray-80);
+			Border: 1px Solid Var(--Gray-35);
 		}
 	}
 
@@ -53,7 +58,7 @@
 		&:Hover,
 		&:Focus-Within
 		{
-			Background-Color: Var(--Gray-20);
+			// Background-Color: Var(--Gray-5);
 		}
 	}
 
@@ -88,7 +93,7 @@
 
 	& > Input[Type="Date"]
 	{
-		Margin: 5px 10px;
+		Margin: 7.5px 10px;
 	}
 
 	&.Roomy > Input[Type="Date"]

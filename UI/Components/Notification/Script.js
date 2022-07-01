@@ -3,7 +3,7 @@ function Notify(Text, Class = 'OK', Icon = 'Chat Bubble')
 	let Container = document.getElementById('Notifications');
 	if (Container === null)
 	{
-		Container = HTMLToElements(`<Div ID='Notifications' AutoLayout Direction='Vertical' AlignX='End'></Div>`)[0];
+		Container = HTML_To_Elements(`<Div ID='Notifications' AutoLayout Direction='Vertical' AlignX='End'></Div>`)[0];
 		document.body.append(Container);
 	};
 
@@ -17,7 +17,7 @@ function Notify(Text, Class = 'OK', Icon = 'Chat Bubble')
 			Element.remove();
 	}
 
-	const Element = HTMLToElements
+	const Element = HTML_To_Elements
 	(`<Div Class='Notification Type-${Class}' AutoLayout Direction='Horizontal' AlignY='Center' Width='Fit'>
 		<Custom-icon Icon='${Icon}'></Custom-Icon>
 		<Span>${Text}</Span>
