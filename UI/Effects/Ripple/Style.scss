@@ -2,25 +2,21 @@
 {
 	Position: Relative;
 	Overflow: Hidden;
+
+	& > Span.Ripple
+	{
+		Position: Absolute;
+		Border-Radius: 50%;
+		Transform: Scale(0);
+		Background-Color: Var(--Ripple-Color, #000000);
+		Animation: Ripple 750ms Linear;
+		Pointer-Events: None;
+
+		@keyframes Ripple
+		{
+			0%   { Transform: Scale(50%); Opacity: 10%; }		// TO DO: Переписать с Transform на Clip-Path
+			50%  { Opacity: 5%; }
+			100% { Transform: Scale(400%); Opacity: 0%; }
+		}
+	}
 }
-
-
-
-.Rippled > Span.Ripple
-{
-	Position: Absolute;
-	Border-Radius: 50%;
-	Transform: Scale(0);
-	Background-Color: Var(--Ripple-Color, #000000);
-	Animation: Ripple 750ms Linear;
-	Pointer-Events: None;
-}
-
-@keyframes Ripple
-{
-	0%   { Transform: Scale(50%); Opacity: 10%; }
-	50%  { Opacity: 5%; }
-	100% { Transform: Scale(400%); Opacity: 0%; }
-}
-
-/* TO DO: Переписать с Transform на Clip-Path */

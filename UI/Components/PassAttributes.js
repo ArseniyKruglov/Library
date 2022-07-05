@@ -1,9 +1,9 @@
-function PassAtributes(Attributes, From, To)
+function PassAtributes(WhiteList, From, To)
 {
 	for (let Attribute of From.getAttributeNames())
-		if (Attributes.includes(Attribute.toLowerCase()) === true)
-		{
+		if (WhiteList.includes(Attribute) === true)
+		// {
 			To.setAttribute(Attribute, From.getAttribute(Attribute));
-			From.removeAttribute(Attribute);
-		};
+		// 	From.removeAttribute(Attribute);
+		// };
 }

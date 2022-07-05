@@ -4,7 +4,7 @@
 Button.Floating
 {
 	--Scale: 56px;
-	--Scale-Icon: Calc(Var(--Scale) * 2 / 3);
+	--Scale-Icon: Calc(Var(--Scale) / 1.75);
 
 	@include Reset_Button;
 	Display: Flex;
@@ -17,18 +17,21 @@ Button.Floating
 	Right: Var(--Padding);
 	Bottom: Calc(Var(--Padding) + Var(--PaddingBottom, 0px));
 	Transition: Background-Color 100ms;
+	// @include Level-1;
+		Z-Index: 1;
+		Background-Color: Var(--Background-01);
+		Box-Shadow: 0px 1px 2px 0px HSLA(0, 0%, 0%, 25%), 0px 1px 3px 1px HSLA(0, 0%, 0%, 10%);
 
 
 
-	SVG
+	& > Custom-icon
 	{
-		Width: Var(--Scale-Icon);
-		Height: Var(--Scale-Icon);
+		--Icon-Scale: Var(--Scale-Icon);
 	}
 
 	&:hover
 	{
-		Background-Color: Var(--Gray-20);
+		Background-Color: Var(--Gray-10);
 	}
 
 	@media (Min-Width: 700px)

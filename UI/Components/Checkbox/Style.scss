@@ -2,16 +2,18 @@
 
 Custom-checkbox > Label
 {
-	& > Input[type="checkbox"]
+	Cursor: Pointer;
+
+	& > Input[Type="Checkbox"]
 	{
 		Position: Absolute;
 		Width: 0;
 
-		&:checked + Div > Custom-icon[Icon="Checkbox-Unchecked"],
-		&:not(:checked) + Div > Custom-icon[Icon="Checkbox-Checked"]
-		{
-			Display: None;
-		}
+		// &:checked + Div > Custom-icon[Icon="check_box_outline_blank"],
+		// &:not(:checked) + Div > Custom-icon[Icon="check_box"]
+		// {
+		// 	Display: None;
+		// }
 
 		&:focus-visible + Div
 		{
@@ -23,16 +25,21 @@ Custom-checkbox > Label
 	{
 		Gap: 5px;
 
-		& > Custom-icon
+		& > Custom-round-button
 		{
-			--Icon-Scale: 20px;
-			--Icon-Color: Var(--Gray-70);
+			&:active
+			{
+				Pointer-events: None;
+			}
+
+			--Button-Scale: 20px;
+			--Hover-Color: Var(--Gray-70);
+			--Icon-Color: Var(--Main);
 		}
 
 		& > Div
 		{
 			Font-family: Var(--Font-UI);
-			Margin-bottom: -3.5px;		// TO DO: Мде
 			@include Ellipsis;
 
 			&:empty

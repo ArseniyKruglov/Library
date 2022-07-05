@@ -1,6 +1,6 @@
 @import '../../Basic/Reset.scss';
 
-Custom-Round-Button
+Custom-round-button
 {
 	--Button-Scale: Var(--Scale, 24px);
 
@@ -14,25 +14,25 @@ Custom-Round-Button
 		@include Reset_Button;
 		Position: Relative;
 		Display: Flex;
-		Align-Items: Center;
-		Justify-Content: Center;
+		Align-items: Center;
+		Justify-content: Center;
 		Width: Var(----Radius);
 		Height: Var(----Radius);
 		Margin: -5px;
 
-		& > Custom-Icon
+		& > Custom-icon
 		{
-			Z-Index: 1;
+			Z-index: 1;
 		}
 
 		& > .Backlight,
 		& > .Ripple
 		{
 			Position: Absolute;
-			Clip-Path: Circle(0);
+			Clip-path: Circle(0);
 			Width: 100%;
 			Height: 100%;
-			Background-Color: Var(--Hover-Color);
+			Background-color: Var(--Hover-Color);
 		}
 
 		& > .Backlight
@@ -47,10 +47,10 @@ Custom-Round-Button
 
 			@keyframes Ripple_Button
 			{
-				0%		{ Opacity: 40%;	Clip-Path: Circle(Calc(Var(----Radius) / 4));	}
-				17.5%		{ Opacity: 25%;	Clip-Path: Circle(Calc(Var(----Radius) / 2));	}
+				0%		{ Opacity: 40%;	Clip-path: Circle(Calc(Var(----Radius) / 4));	}
+				17.5%		{ Opacity: 25%;	Clip-path: Circle(Calc(Var(----Radius) / 2));	}
 				50%		{ Opacity: 5%;									}
-				100%		{ Opacity: 0%;	Clip-Path: Circle(Calc(Var(----Radius) / 2));	}
+				100%		{ Opacity: 0%;	Clip-path: Circle(Calc(Var(----Radius) / 2));	}
 			}
 		}
 
@@ -59,7 +59,7 @@ Custom-Round-Button
 			@media (hover: hover)
 			{
 				Opacity: 5%;
-				Clip-Path: Circle(Calc(Var(----Radius) / 2));
+				Clip-path: Circle(Calc(Var(----Radius) / 2));
 			}
 		}
 	}

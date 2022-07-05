@@ -162,8 +162,16 @@ A.Text
 	&.Icon
 	{
 		Display: Inline-flex;
-		Align-items: End;		// TO DO: Точно?
-		Gap: 7.5px;
+		Align-items: Center;		// TO DO
+
+		Gap: 2.5px;
+
+		&.Roomy,
+		&.Fill,
+		&.Outlined
+		{
+			Gap: 7.5px;
+		}
 
 		& > Custom-icon
 		{

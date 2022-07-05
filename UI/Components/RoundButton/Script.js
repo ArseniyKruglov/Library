@@ -9,7 +9,6 @@ class RoundButton extends HTMLElement
 
 		PassAtributes(['type', 'tabindex'], this, this.children[0]);
 
-
 		this.addEventListener('click', () =>
 		{
 			const Ripple = document.createElement('Span');
@@ -17,6 +16,11 @@ class RoundButton extends HTMLElement
 			this.children[0].append(Ripple);
 			setTimeout(() => Ripple.remove(), 750);
 		});
+	}
+
+	set Icon(Value)
+	{
+		this.children[0].children[0].Icon = Value;
 	}
 }
 

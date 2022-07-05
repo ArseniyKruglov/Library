@@ -1,0 +1,17 @@
+Code.Library
+{
+	Background-color: Var(--Gray-5);
+	Font-family: Var(--Font-Monospace);
+	Border-radius: 5px;
+
+	&.Block
+	{
+		Padding: 15px;
+		Width: Fit-content;
+	}
+
+	&.Inline
+	{
+		Padding: 5px;
+	}
+}
