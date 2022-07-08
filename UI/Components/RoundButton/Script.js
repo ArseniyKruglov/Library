@@ -4,14 +4,14 @@ class RoundButton extends HTMLElement
 	{
 		this.innerHTML =	`<Button>
 						<Custom-icon Icon='${this.getAttribute('Icon')}'></Custom-icon>
-						<Span Class='Backlight'></Span>
+						<Div Class='Backlight'></Div>
 					 </Button>`;
 
 		PassAtributes(['type', 'tabindex'], this, this.children[0]);
 
 		this.addEventListener('click', () =>
 		{
-			const Ripple = document.createElement('Span');
+			const Ripple = document.createElement('Div');
 			Ripple.className = 'Ripple';
 			this.children[0].append(Ripple);
 			setTimeout(() => Ripple.remove(), 750);

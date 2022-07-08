@@ -2,12 +2,7 @@
 
 Custom-round-button
 {
-	--Button-Scale: Var(--Scale, 24px);
-
-	--Icon-Color: Var(--Gray-80);
-	--Hover-Color: Var(--Gray-80);
-
-	----Radius: Calc(Var(--Button-Scale) + 12px);
+	----Radius: Calc(Var(--Scale, 24px) * 1.5);
 
 	& > Button
 	{
@@ -22,6 +17,7 @@ Custom-round-button
 
 		& > Custom-icon
 		{
+			--Color: Var(--Icon-Color, Var(--Gray-80));
 			Z-index: 1;
 		}
 
@@ -32,7 +28,7 @@ Custom-round-button
 			Clip-path: Circle(0);
 			Width: 100%;
 			Height: 100%;
-			Background-color: Var(--Hover-Color);
+			Background-color: Var(--Hover-Color, Var(--Gray-80));
 		}
 
 		& > .Backlight

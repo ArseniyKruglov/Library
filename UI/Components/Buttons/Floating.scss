@@ -4,7 +4,6 @@
 Button.Floating
 {
 	--Scale: 56px;
-	--Scale-Icon: Calc(Var(--Scale) / 1.75);
 
 	@include Reset_Button;
 	Display: Flex;
@@ -26,7 +25,7 @@ Button.Floating
 
 	& > Custom-icon
 	{
-		--Icon-Scale: Var(--Scale-Icon);
+		--Scale: Calc(Var(--Scale) / 1.75);
 	}
 
 	&:hover

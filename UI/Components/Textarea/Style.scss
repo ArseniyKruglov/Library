@@ -1,45 +1,43 @@
 Custom-textarea
 {
+	& > Div > Textarea
+	{
+		Display: Block;
+		Font-family: Var(--Font-UI);
+		Resize: None;
+		Border: None;
+
+		&:focus
+		{
+			Outline: None;
+		}
+	}
+
+
+
 	&:not(.Roomy) > Div > Textarea
 	{
+		Width: unquote("Calc(100% - 20px)");
+		Height: unquote("Calc(Var(--ContentHeight) - 20px)");
 		Padding: 10px;
 	}
 
 	&.Roomy > Div > Textarea
 	{
+		Width: unquote("Calc(100% - 40px)");
+		Height: unquote("Calc(Var(--ContentHeight) - 40px)");
 		Padding: 20px;
 	}
 
-	& > Div
+
+
+	&:not([ReadOnly]) > Div
 	{
 		& > Textarea
 		{
-			Display: Block;
-			Font-family: Var(--Font-UI);
-			Width: unquote("Calc(100% - 20px)");
-			Resize: None;
-			Border-radius: 5px 5px 0 0;
+			Border-radius: Var(--Border) Var(--Border) 0 0;
 			Background: Var(--Gray-5);
-			Border: None;
-
-
-
-			&:not([ReadOnly])
-			{
-				Border-bottom: 1px Solid Var(--Gray-20);
-			}
-
-			&[ReadOnly]
-			{
-				Cursor: Default;
-				Border-radius: 5px;
-				Background: Var(--Gray-10);
-			}
-
-			&:focus
-			{
-				Outline: None;
-			}
+			Border-bottom: 1px Solid Var(--Gray-20);
 		}
 
 		&::after
@@ -47,13 +45,19 @@ Custom-textarea
 			Display: Block;
 			Content: '';
 			Border-top: 2px solid Var(--Main-UI);
-			Transform: TranslateY(-1px) ScaleX(0);
+			Transform: ScaleX(0) TranslateY(-1px) ;
 			Transition: Transform 250ms;
 		}
 
 		&:focus-within::after
 		{
-			Transform: TranslateY(-1px) ScaleX(1);
+			Transform: ScaleX(1) TranslateY(-1px);
 		}
+	}
+
+	&[ReadOnly] > Div > Textarea
+	{
+		Border-radius: Var(--Border);
+		Background: Var(--Gray-10);
 	}
 }

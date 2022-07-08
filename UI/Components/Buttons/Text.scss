@@ -140,7 +140,7 @@ A.Text
 	&.Fill,
 	&.Outlined
 	{
-		Border-radius: 5px;
+		Border-radius: Var(--Border);
 	}
 
 	&.Hover
@@ -175,8 +175,8 @@ A.Text
 
 		& > Custom-icon
 		{
-			--Icon-Color: Var(----Text);
-			--Icon-Scale: 20px;
+			--Color: Var(----Text);
+			--Scale: 20px;
 		}
 
 		// & > SVG

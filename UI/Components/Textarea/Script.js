@@ -1,4 +1,4 @@
-class Textarea extends HTMLElement
+customElements.define('custom-textarea', class Textarea extends HTMLElement
 {
 	connectedCallback()
 	{
@@ -8,44 +8,47 @@ class Textarea extends HTMLElement
 
 					  <Button Class='Text Icon Gray Hover'></Button>`;
 
-
+		// Constants
 		this.Textarea = this.children[0].children[0];
 		this.Expand = this.children[1];
 
 		PassAtributes(['readonly', 'placeholder'], this, this.Textarea);
 
+		// Constants
 		this.Minimized = 150;
-		this.Limit = this.Minimized + 55;
 
-		this.Scale();
+		// Cursor
+		const Length = this.value.length;
+		this.Textarea.setSelectionRange(Length, Length);
 
-		this.Expanded = parseInt(this.Textarea.style.height) < this.Limit;
-		this.ExpandHandler();
-		this.Textarea.addEventListener('input', () => this.ExpandHandler());
-		addEventListener('resize', () => this.ExpandHandler());
+		// Expand
+		this.ExpandButtonHandler();
+		this.Expanded = this.ContentHeight < this.Minimized;
+
+		// Listeners
+		this.Textarea.addEventListener('input', () => this.ExpandButtonHandler());
 		this.Expand.addEventListener('click', () =>
 		{
 			this.Expanded = !this.Expanded;
-			this.ExpandHandler();
+			this.ExpandButtonHandler();
 		});
-		document.fonts.ready.then(() => this.ExpandHandler());
-
-		const Length = (this.getAttribute('value') || '').length;
-		this.Textarea.setSelectionRange(Length, Length);
+		window.addEventListener('resize', () => this.ExpandButtonHandler());
+		document.fonts.ready.then(() => this.ExpandButtonHandler());
 	}
 
-	ExpandHandler()
+	ExpandButtonHandler()
 	{
 		this.Scale();
 
-		if (parseInt(this.Textarea.style.height) < this.Limit)
+		if (this.ContentHeight < this.Minimized)
 		{
 			this.Expand.hidden = true;
+			this.Textarea.style.setProperty('--ContentHeight', this.ContentHeight + 'px');
 		}
 		else
 		{
-			this.Textarea.style.maxHeight = this.Expanded ? '' : `${this.Minimized}px`;
 			this.Expand.hidden = false;
+			this.Textarea.style.setProperty('--ContentHeight', this.Minimized + 'px');
 			this.Expand.innerHTML =  `<Span>${(this.Expanded ? ['Show less', 'Свернуть'] : ['Show full', 'Показать полностью'])[1]}</Span>
 							  <Custom-icon Icon='${this.Expanded ? 'expand_less' : 'expand_more'}''></Custom-icon>`;
 		};
@@ -55,8 +58,11 @@ class Textarea extends HTMLElement
 	{
 		this.Textarea.style.overflow = 'hidden';
 		this.Textarea.style.height = 0;
-		this.Textarea.style.height = (this.Textarea.scrollHeight - 20 + 2) + 'px';
+		this.ContentHeight = this.Textarea.scrollHeight;
+		this.Textarea.style.height = '';
 		this.Textarea.style.overflow = '';
+
+		this.Textarea.style.setProperty('--ContentHeight', this.ContentHeight + 'px');
 	}
 
 	get value()
@@ -64,16 +70,14 @@ class Textarea extends HTMLElement
 		return this.Textarea.value;
 	}
 
-	set value(sValue)
+	set value(Value)
 	{
-		this.Textarea.value = sValue;
-		this.ExpandHandler();
+		this.Textarea.value = Value;
+		this.ExpandButtonHandler();
 	}
 
-	set placeholder(sValue)
+	set placeholder(Value)
 	{
-		this.Textarea.setAttribute('placeholder', sValue);
+		this.Textarea.setAttribute('placeholder', Value);
 	}
-}
-
-customElements.define('custom-textarea', Textarea);
+})

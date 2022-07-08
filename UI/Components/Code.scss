@@ -2,7 +2,7 @@ Code.Library
 {
 	Background-color: Var(--Gray-5);
 	Font-family: Var(--Font-Monospace);
-	Border-radius: 5px;
+	Border-radius: Var(--Border);
 
 	&.Block
 	{

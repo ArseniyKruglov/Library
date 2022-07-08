@@ -14,7 +14,7 @@
 	{
 		@include Level-2;
 		Gap: 10px;
-		Border-radius: 5px;
+		Border-radius: Var(--Border);
 		Padding: 15px;
 		Transition: Opacity 250ms, Height 250ms, Padding 250ms;
 

@@ -22,9 +22,21 @@
 
 
 
+	// Margin
+
 	&:not(.Roomy) > *
 	{
 		Margin: 8px;
+	}
+
+	&:not(.Roomy).Round > *
+	{
+		Margin: 8px 14px;
+
+		&[Type="Time"]
+		{
+			Margin: 8px 8px 8px 12px;
+		}
 	}
 
 	&.Roomy > *
@@ -32,9 +44,23 @@
 		Margin: 14px;
 	}
 
+	&.Roomy.Round > *
+	{
+		Margin: 14px 20px;
+
+		&[Type="Time"]
+		{
+			Margin: 14px 14px 14px 18px;
+		}
+	}
+
+
+
+	// Round
+
 	&:not(.Round)
 	{
-		Border-Radius: 5px;
+		Border-Radius: Var(--Border);
 	}
 
 	&.Round
@@ -42,51 +68,85 @@
 		Border-Radius: 50px;
 	}
 
+
+
+	// Outline
+
 	&.Outlined
 	{
-		Border: 1px Solid Var(--Gray-15);
+		Transition: Border-color 50ms;
 
-		&:Hover,
-		&:Focus-Within
+		&:not(.Main)
 		{
-			Border: 1px Solid Var(--Gray-35);
+			Border: 1px Solid Var(--Gray-15);
+
+			&:Hover,
+			&:Focus-Within
+			{
+				Border-color: Var(--Gray-35);
+			}
 		}
+
+		// &.Main
+		// {
+		// 	Border: 1px Solid Var(--Main);
+
+		// 	&:Hover,
+		// 	&:Focus-Within
+		// 	{
+		// 		Border-color: Var(--Main-UI);
+		// 	}
+		// }
 	}
 
 	&:not(.Outlined)
 	{
-		&:Hover,
-		&:Focus-Within
+		Transition: Background-color 50ms;
+
+		&:not(.Main)
 		{
-			// Background-Color: Var(--Gray-5);
+			&:Hover,
+			&:Focus-Within
+			{
+				Background-Color: Var(--Gray-5);
+			}
+		}
+
+		&.Main
+		{
+			&:Hover,
+			&:Focus-Within
+			{
+				Background-Color: Var(--Main-UI-Transparent);
+			}
 		}
 	}
 
-	&.Bold > *
-	{
-		Font-Weight: 500;
-	}
+	// &.Bold > *
+	// {
+	// 	Font-Weight: 500;
+	// }
 
 
 
 	&.Top
 	{
-		Border-Radius: 25px 25px 5px 5px;
+		Border-Radius: 25px 25px Var(--Border) Var(--Border);
 	}
 
 	&.Right
 	{
-		Border-Radius: 5px 25px 25px 5px;
+		Border-Radius: Var(--Border) 25px 25px Var(--Border);
 	}
 
 	&.Bottom
 	{
-		Border-Radius: 5px 5px 25px 25px;
+		Border-Radius: Var(--Border) Var(--Border) 25px 25px;
 	}
 
 	&.Left
 	{
-		Border-Radius: 25px 5px 5px 25px;
+		Border-Radius: 25px Var(--Border) Var(--Border) 25px;
 	}
 
 
