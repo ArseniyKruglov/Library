@@ -1,6 +1,7 @@
 .InputContainer
 {
 	Display: Inline-Flex;
+	Width: Fit-content;
 
 	*
 	{
@@ -11,7 +12,7 @@
 	{
 		Border: None;
 		Background: None;
-		Width: 100%;
+		// Width: fit-content;
 		Text-overflow: Ellipsis;
 	}
 
@@ -86,17 +87,6 @@
 				Border-color: Var(--Gray-35);
 			}
 		}
-
-		// &.Main
-		// {
-		// 	Border: 1px Solid Var(--Main);
-
-		// 	&:Hover,
-		// 	&:Focus-Within
-		// 	{
-		// 		Border-color: Var(--Main-UI);
-		// 	}
-		// }
 	}
 
 	&:not(.Outlined)
@@ -121,11 +111,6 @@
 			}
 		}
 	}
-
-	// &.Bold > *
-	// {
-	// 	Font-Weight: 500;
-	// }
 
 
 
@@ -172,4 +157,36 @@
 	{
 		Margin: 14px 20px;
 	}
+
+
+
+	&.TitledSelect
+	{
+		& > Span,
+		& > Select
+		{
+			Font-size: 16px;
+		}
+
+		& > Span
+		{
+			Font-weight: 500;
+			White-space: Nowrap;
+		}
+
+		& > Select
+		{
+			Border: None;
+		}
+	}
+}
+
+Input[Type="Color"]
+{
+	Padding: 0;
+	Border: None;
+	Width: 40px;
+	Height: 40px;
+	Clip-path: Circle(15px);
+	Margin: -5px;
 }

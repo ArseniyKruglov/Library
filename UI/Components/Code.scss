@@ -3,11 +3,16 @@ Code.Library
 	Background-color: Var(--Gray-5);
 	Font-family: Var(--Font-Monospace);
 	Border-radius: Var(--Border);
+	Direction: LTR;
 
 	&.Block
 	{
 		Padding: 15px;
 		Width: Fit-content;
+		Max-width: unquote("Calc(100% - 30px)");
+		White-space: Nowrap;
+		Line-height: 150%;
+		Overflow-x: Auto;
 	}
 
 	&.Inline

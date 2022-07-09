@@ -1,4 +1,4 @@
-Array.prototype.selectWhere = function(Object, Single)
+Array.prototype.SelectWhere = function (Object, Single)
 {
 	if (Single === true)
 	{

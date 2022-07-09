@@ -1,5 +1,9 @@
 Custom-textarea
 {
+	Display: Flex;
+	Flex-direction: Column;
+	Gap: 2.5px;
+
 	& > Div > Textarea
 	{
 		Display: Block;

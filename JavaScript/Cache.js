@@ -1,4 +1,4 @@
-function Cache_Get(Key)		// TO DO: Критический баг
+function Cache_Get(Key)		// TO DO: Критическая ошибка
 {
 	return JSON.parse(localStorage.getItem(Key));
 }

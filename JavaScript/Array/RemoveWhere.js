@@ -1,4 +1,4 @@
-Array.prototype.removeWhere = function(Object, Single)
+Array.prototype.RemoveWhere = function (Object, Single)
 {
 	if (Single === true)
 	{
