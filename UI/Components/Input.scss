@@ -25,33 +25,76 @@
 
 	// Margin
 
-	&:not(.Roomy) > *
+	&:not(.Titled)
 	{
-		Margin: 8px;
-	}
-
-	&:not(.Roomy).Round > *
-	{
-		Margin: 8px 14px;
-
-		&[Type="Time"]
+		&:not(.Roomy) > *
 		{
-			Margin: 8px 8px 8px 12px;
+			Margin: 8px;
+		}
+
+		&:not(.Roomy).Round > *
+		{
+			Margin: 8px 14px;
+
+			&[Type="Time"]
+			{
+				Margin: 8px 8px 8px 12px;
+			}
+		}
+
+		&.Roomy > *
+		{
+			Margin: 14px;
+		}
+
+		&.Roomy.Round > *
+		{
+			Margin: 14px 20px;
+
+			&[Type="Time"]
+			{
+				Margin: 14px 14px 14px 18px;
+			}
+		}
+
+
+
+		& > Input[Type="Date"]
+		{
+			Margin: 7.5px 10px;
+		}
+
+		&.Roomy > Input[Type="Date"]
+		{
+			Margin: 14px 20px;
+		}
+
+
+
+		& > Input[Type="Datetime-Local"]
+		{
+			Margin: 5px 10px;
+		}
+
+		&.Roomy > Input[Type="Datetime-Local"]
+		{
+			Margin: 14px 20px;
 		}
 	}
 
-	&.Roomy > *
+	&.Titled
 	{
-		Margin: 14px;
-	}
+		Display: Flex;
+		Gap: 7.5px;
 
-	&.Roomy.Round > *
-	{
-		Margin: 14px 20px;
-
-		&[Type="Time"]
+		&:not(.Roomy)
 		{
-			Margin: 14px 14px 14px 18px;
+			Padding: 8px;
+		}
+
+		&.Roomy
+		{
+			Padding: 14px;
 		}
 	}
 
@@ -136,52 +179,22 @@
 
 
 
-	& > Input[Type="Date"]
+	&.Titled
 	{
-		Margin: 7.5px 10px;
-	}
-
-	&.Roomy > Input[Type="Date"]
-	{
-		Margin: 14px 20px;
-	}
-
-
-
-	& > Input[Type="Datetime-Local"]
-	{
-		Margin: 5px 10px;
-	}
-
-	&.Roomy > Input[Type="Datetime-Local"]
-	{
-		Margin: 14px 20px;
-	}
-
-
-
-	&.TitledSelect
-	{
-		& > Span,
-		& > Select
-		{
-			Font-size: 16px;
-		}
-
 		& > Span
 		{
 			Font-weight: 500;
 			White-space: Nowrap;
 		}
 
-		& > Select
+		& > :last-child
 		{
 			Border: None;
 		}
 	}
 }
 
-Input[Type="Color"]
+Input[Type="Color"].Library
 {
 	Padding: 0;
 	Border: None;
@@ -189,4 +202,5 @@ Input[Type="Color"]
 	Height: 40px;
 	Clip-path: Circle(15px);
 	Margin: -5px;
+	Cursor: Pointer;
 }
