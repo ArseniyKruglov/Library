@@ -18,7 +18,7 @@ class Select extends HTMLSelectElement
 			TempSelect.remove();
 
 			if (Focus)
-				this.focus();
+				this.focus({ preventScroll: true });
 		}
 
 		this.addEventListener('change', () => Scale(true));

@@ -13,7 +13,7 @@ Button.Floating
 	Border-Radius: 50%;
 	Position: Fixed;
 	Right: Var(--Padding);
-	Bottom: Calc(Var(--Padding) + Var(--PaddingBottom, 0px));
+	Bottom: unquote("Calc(Var(--Padding) + Var(--PaddingBottom, 0px))");
 	Transition: Background-Color 100ms;
 	// @include Level-1;
 		Z-Index: 1;

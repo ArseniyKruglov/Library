@@ -1,4 +1,4 @@
-customElements.define('custom-textarea', class Textarea extends HTMLElement
+customElements.define('custom-textarea', class extends HTMLElement
 {
 	connectedCallback()
 	{
