@@ -5,24 +5,23 @@ class CustomCheckbox extends HTMLElement
 		this.innerHTML =	`<Label>
 						<Input Type='Checkbox'>
 						<Div AutoLayout Direction='Horizontal' AlignY='Center'>
-							<Custom-icon Icon='check_box_outline_blank'></Custom-icon>
-							<Custom-icon Icon='check_box'></Custom-icon>
+							<Custom-icon Icon='outlined/check_box_outline_blank'></Custom-icon>
+							<Custom-icon Icon='filled/check_box'></Custom-icon>
 
 							<Div Class='Backlight'></Div>
 
-							<Div>${this.getAttribute('Label') || ''}</Div>
+							<Div Class='Label'>${this.getAttribute('Label') || ''}</Div>
 						</Div>
 					 </Label>`;
 
 		PassAtributes(['checked', 'value', 'disabled', 'name', 'readonly', 'required'], this, this.children[0].children[0]);
 
-		// this.addEventListener('click', () =>
-		// {
-		// 	const Ripple = document.createElement('Div');
-		// 	Ripple.className = 'Ripple';
-		// 	this.children[0].children[1].append(Ripple);
-		// 	setTimeout(() => Ripple.remove(), 750);
-		// });
+		this.addEventListener('click', () =>
+		{
+			const Ripple = HTML_To_Elements(`<Div Class='Ripple'></Div>`)[0];
+			this.children[0].children[1].append(Ripple);
+			setTimeout(() => Ripple.remove(), 750);
+		});
 
 		this.addEventListener('mousedown', (Event) =>
 		{

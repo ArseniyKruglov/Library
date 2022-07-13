@@ -1,5 +1,6 @@
+$Font-SystemUI: 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif';
 $Font-Fallback-Serif: 'Times New Roman', 'Times', 'Serif';
-$Font-Fallback-Sans-serif: 'System-UI', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'Sans-serif';
+$Font-Fallback-SansSerif: #{$Font-SystemUI};
 $Font-Fallback-Monospace: 'Courier New', 'Courier', 'Monospace';
 
 *

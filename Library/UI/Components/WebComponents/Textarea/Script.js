@@ -18,27 +18,27 @@ customElements.define('custom-textarea', class extends HTMLElement
 		this.Minimized = 150;
 
 		// Cursor
-		const Length = this.value.length;
-		this.Textarea.setSelectionRange(Length, Length);
+		const TextLength = this.value.length;
+		this.Textarea.setSelectionRange(TextLength, TextLength);
 
 		// Expand
-		this.ExpandButtonHandler();
+		this.Expander();
 		this.Expanded = this.ContentHeight < this.Minimized;
 
 		// Listeners
-		this.Textarea.addEventListener('input', () => this.ExpandButtonHandler());
+		this.Textarea.addEventListener('input', () => this.Expander());
 		this.Expand.addEventListener('click', () =>
 		{
 			this.Expanded = !this.Expanded;
-			this.ExpandButtonHandler();
+			this.Expander();
 		});
-		window.addEventListener('resize', () => this.ExpandButtonHandler());
-		document.fonts.ready.then(() => this.ExpandButtonHandler());
+		window.addEventListener('resize', () => this.Expander());
+		document.fonts.ready.then(() => this.Expander());
 	}
 
-	ExpandButtonHandler()
+	Expander()
 	{
-		this.Scale();
+		this.UpdateContentHeight();
 
 		if (this.ContentHeight < this.Minimized)
 		{
@@ -48,32 +48,34 @@ customElements.define('custom-textarea', class extends HTMLElement
 		else
 		{
 			this.Expand.hidden = false;
-			this.Textarea.style.setProperty('--ContentHeight', this.Minimized + 'px');
+
+			if (this.Expanded)
+				this.Textarea.style.setProperty('--ContentHeight', this.ContentHeight + 'px');
+			else
+				this.Textarea.style.setProperty('--ContentHeight', this.Minimized + 'px');
+
 			this.Expand.innerHTML =  `<Span>${(this.Expanded ? ['Show less', 'Свернуть'] : ['Show full', 'Показать полностью'])[1]}</Span>
-							  <Custom-icon Icon='${this.Expanded ? 'expand_less' : 'expand_more'}''></Custom-icon>`;
+							  <Custom-icon Icon='${this.Expanded ? 'outlined/expand_less' : 'outlined/expand_more'}''></Custom-icon>`;
 		};
 	}
 
-	Scale()
+	UpdateContentHeight()
 	{
 		this.Textarea.style.overflow = 'hidden';
 		this.Textarea.style.height = 0;
 		this.ContentHeight = this.Textarea.scrollHeight;
 		this.Textarea.style.height = '';
 		this.Textarea.style.overflow = '';
-
-		this.Textarea.style.setProperty('--ContentHeight', this.ContentHeight + 'px');
 	}
 
 	get value()
 	{
 		return this.Textarea.value;
 	}
-
 	set value(Value)
 	{
 		this.Textarea.value = Value;
-		this.ExpandButtonHandler();
+		this.Expander();
 	}
 
 	set placeholder(Value)

@@ -183,7 +183,7 @@ function UglifyHTML(Code)
 
 
 
-function GetIcons(Names, Type = 'outlined')
+function GetIcons(Names)
 {
 	const Output = {};
 
@@ -191,7 +191,7 @@ function GetIcons(Names, Type = 'outlined')
 	for (let Name of Names)
 		Promises.push(new Promise((Resolve) =>
 		{
-			FS.readFile(`node_modules/@material-design-icons/svg/${Type}/${Name}.svg`, (Error, Data) =>
+			FS.readFile(`node_modules/@material-design-icons/svg/${Name}.svg`, (Error, Data) =>
 			{
 				Output[Name] = Data.toString().replace(`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">`, '').replace('</svg>', '');
 				Resolve();
@@ -203,7 +203,7 @@ function GetIcons(Names, Type = 'outlined')
 
 function GetIconsList(Code)
 {
-	return Match(Code, /Icon="(.*?)"/g);
+	return [...Match(Code, /Icon="(.*?)"/g), 'outlined/check_box_outline_blank', 'filled/check_box', 'outlined/more_vert', 'outlined/expand_more', 'outlined/expand_less'];
 }
 
 function Clear()
@@ -219,6 +219,7 @@ function PackCSS()
 		(
 			Merge
 			([
+				`${Source}/Constants-SCSS.scss`,
 				...Lazy(`${Library}/**/*.scss`, Regexps.SCSS),
 				...Lazy(`${Source}/*.scss`, Regexps.SCSS)
 			])
@@ -232,7 +233,7 @@ function PackCSS()
 
 function PackJS()
 {
-	const Icons = GetIcons([...GetIconsList(ReadFileSync(`${Source}/Index.html`)),  'check_box_outline_blank', 'check_box', 'more_vert', 'expand_more', 'expand_less']);
+	const Icons = GetIcons(GetIconsList(ReadFileSync(`${Source}/Index.html`)));
 
 	Promise.all([Icons]).then((Values) =>
 	{

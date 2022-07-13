@@ -2,7 +2,10 @@
 
 Custom-round-button
 {
-	----Radius: Calc(Var(--Scale, 24px) * 1.5);
+	--Scale: 24px;
+	--Icon-Color: Var(--Gray-80);
+	--Hover-Color: Var(--Icon-Color);
+	--Hover-Icon-Color: Var(--Icon-Color);
 
 	& > Button
 	{
@@ -11,51 +14,60 @@ Custom-round-button
 		Display: Flex;
 		Align-items: Center;
 		Justify-content: Center;
-		Width: Var(----Radius);
-		Height: Var(----Radius);
-		Margin: -5px;
+		Width: Var(--Scale);
+		Height: Var(--Scale);
+
+
 
 		& > Custom-icon
 		{
-			--Color: Var(--Icon-Color, Var(--Gray-80));
-			Z-index: 1;
+			--Color: Var(--Icon-Color);
 		}
+
+		&:hover > Custom-icon
+		{
+			--Color: Var(--Hover-Icon-Color);
+		}
+
+
 
 		& > .Backlight,
 		& > .Ripple
 		{
 			Position: Absolute;
-			Clip-path: Circle(0);
-			Width: 100%;
-			Height: 100%;
-			Background-color: Var(--Hover-Color, Var(--Gray-80));
+			Clip-path: Circle(14px);
+			Width: 28px;
+			Height: 28px;
+			Background-color: Var(--Hover-Color);
+			// Pointer-events: None;
 		}
+
+
 
 		& > .Backlight
 		{
 			Opacity: 0%;
-			Transition: Opacity 50ms, Clip-Path 300ms;
+			Transition: Opacity 50ms, Transform 300ms;
 		}
+
+		&:hover > .Backlight
+		{
+			Opacity: 5%;
+			Transform: Scale(1.75);
+		}
+
+
 
 		& > .Ripple
 		{
-			Animation: Ripple_Button 750ms Linear;
+			Animation: CustomRoundButton_Ripple 750ms Linear;
 
-			@keyframes Ripple_Button
+			@keyframes CustomRoundButton_Ripple
 			{
-				0%		{ Opacity: 40%;	Clip-path: Circle(Calc(Var(----Radius) / 4));	}
-				17.5%		{ Opacity: 25%;	Clip-path: Circle(Calc(Var(----Radius) / 2));	}
-				50%		{ Opacity: 5%;									}
-				100%		{ Opacity: 0%;	Clip-path: Circle(Calc(Var(----Radius) / 2));	}
-			}
-		}
-
-		&:Hover > .Backlight
-		{
-			@media (hover: hover)
-			{
-				Opacity: 5%;
-				Clip-path: Circle(Calc(Var(----Radius) / 2));
+				0%		{ Opacity: 30%;	Transform: Scale(1);				}
+				17.5%		{ Opacity: 15%;	Transform: Scale(1.75);		}
+				50%		{ Opacity: 5%;								}
+				100%		{ Opacity: 0%;	Transform: Scale(1.75);		}
 			}
 		}
 	}

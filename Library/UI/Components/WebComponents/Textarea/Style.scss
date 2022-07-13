@@ -39,7 +39,7 @@ Custom-textarea
 	{
 		& > Textarea
 		{
-			Border-radius: Var(--Border) Var(--Border) 0 0;
+			Border-radius: Var(--Border-radius) Var(--Border-radius) 0 0;
 			Background: Var(--Gray-5);
 			Border-bottom: 1px Solid Var(--Gray-20);
 		}
@@ -61,7 +61,7 @@ Custom-textarea
 
 	&[ReadOnly] > Div > Textarea
 	{
-		Border-radius: Var(--Border);
+		Border-radius: Var(--Border-radius);
 		Background: Var(--Gray-10);
 	}
 }

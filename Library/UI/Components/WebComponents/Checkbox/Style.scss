@@ -2,7 +2,7 @@
 
 Custom-checkbox
 {
-	--Color: Var(Main);
+	--Color: Var(--Gray-85);
 
 	&.Main
 	{
@@ -18,8 +18,8 @@ Custom-checkbox
 			Position: Absolute;
 			Width: 0;
 
-			&:checked + Div > Custom-icon[Icon="check_box_outline_blank"],
-			&:not(:checked) + Div > Custom-icon[Icon="check_box"]
+			&:checked + Div > Custom-icon[Icon="outlined/check_box_outline_blank"],
+			&:not(:checked) + Div > Custom-icon[Icon="filled/check_box"]
 			{
 				Display: None;
 			}
@@ -34,7 +34,7 @@ Custom-checkbox
 		{
 			Gap: 5px;
 
-			& > Div
+			& > .Label
 			{
 				Font-family: Var(--Font-UI);
 				@include Ellipsis;
@@ -51,39 +51,40 @@ Custom-checkbox
 			& > .Ripple
 			{
 				Position: Absolute;
-				Clip-path: Circle(0);
-				Width: 100%;
-				Height: 100%;
+				Clip-path: Circle(9px);
+				Width: 24px;
+				Height: 24px;
 				Background-color: Var(--Color);
 			}
+
+
 
 			& > .Backlight
 			{
 				Opacity: 0%;
-				Transition: Opacity 50ms, Clip-Path 300ms;
+				Transition: Opacity 50ms, Transform 300ms;
 			}
+
+
 
 			& > .Ripple
 			{
-				Animation: Ripple_Button 750ms Linear;
+				Animation: CustomCheckbox_Ripple 750ms Linear;
 
-				@keyframes Ripple_Button
+				@keyframes CustomCheckbox_Ripple
 				{
-					0%		{ Opacity: 40%;	Clip-path: Circle(Calc(Var(----Radius) / 4));	}
-					17.5%		{ Opacity: 25%;	Clip-path: Circle(Calc(Var(----Radius) / 2));	}
-					50%		{ Opacity: 5%;									}
-					100%		{ Opacity: 0%;	Clip-path: Circle(Calc(Var(----Radius) / 2));	}
-				}
-			}
-
-			&:Hover > .Backlight
-			{
-				@media (hover: hover)
-				{
-					Opacity: 5%;
-					Clip-path: Circle(Calc(Var(----Radius) / 2));
+					0%		{ Opacity: 12.5%;	Transform: Scale(1);	}
+					17.5%		{ Opacity: 7.5%;	Transform: Scale(1.75);	}
+					50%		{ Opacity: 1.5%;					}
+					100%		{ Opacity: 0%;	Transform: Scale(1.75);	}
 				}
 			}
 		}
+	}
+
+	&:Hover > Label > Div > .Backlight
+	{
+		Opacity: 5%;
+		Transform: Scale(1.75);
 	}
 }

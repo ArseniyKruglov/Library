@@ -90,11 +90,21 @@
 		&:not(.Roomy)
 		{
 			Padding: 8px;
+
+			&.Titled
+			{
+				Padding: 8px 10px 8px 14px;
+			}
 		}
 
 		&.Roomy
 		{
 			Padding: 14px;
+
+			&.Titled
+			{
+				Padding: 14px 16px 14px 20px;
+			}
 		}
 	}
 
@@ -104,7 +114,7 @@
 
 	&:not(.Round)
 	{
-		Border-Radius: Var(--Border);
+		Border-Radius: Var(--Border-radius);
 	}
 
 	&.Round
@@ -159,28 +169,29 @@
 
 	&.Top
 	{
-		Border-Radius: 25px 25px Var(--Border) Var(--Border);
+		Border-Radius: 25px 25px Var(--Border-radius) Var(--Border-radius);
 	}
 
 	&.Right
 	{
-		Border-Radius: Var(--Border) 25px 25px Var(--Border);
+		Border-Radius: Var(--Border-radius) 25px 25px Var(--Border-radius);
 	}
 
 	&.Bottom
 	{
-		Border-Radius: Var(--Border) Var(--Border) 25px 25px;
+		Border-Radius: Var(--Border-radius) Var(--Border-radius) 25px 25px;
 	}
 
 	&.Left
 	{
-		Border-Radius: 25px Var(--Border) Var(--Border) 25px;
+		Border-Radius: 25px Var(--Border-radius) Var(--Border-radius) 25px;
 	}
 
 
 
 	&.Titled
 	{
+
 		& > Span
 		{
 			Font-weight: 500;
@@ -203,4 +214,41 @@ Input[Type="Color"].Library
 	Clip-path: Circle(15px);
 	Margin: -5px;
 	Cursor: Pointer;
+}
+
+Input[Type="Range"].Library
+{
+	&
+	{
+		-webkit-appearance: None;
+		height: 2.5px;
+		Border-radius: 1.25px;
+		background-color: Var(--Gray-20);
+	}
+
+	&::-webkit-slider-thumb
+	{
+		-webkit-appearance: None;
+		Height: 20px;
+		Width: 20px;
+		Border-radius: 50%;
+		Transform: Scale(0.85);
+		Background: Var(--Gray-80);
+		Transition: Transform 150ms;
+		Cursor: ew-resize;
+
+		&:hover
+		{
+			Transform: Scale(1.25);
+		}
+	}
+
+	&::-webkit-slider-runnable-track
+	{
+		Margin: 0 -10px;
+		// -webkit-appearance: none;
+		// box-shadow: none;
+		// border: none;
+		// background: transparent;
+	}
 }

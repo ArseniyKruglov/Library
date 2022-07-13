@@ -1,9 +1,13 @@
 Code.Library
 {
 	Background-color: Var(--Gray-5);
-	Font-family: Var(--Font-Monospace);
-	Border-radius: Var(--Border);
+	Border-radius: Var(--Border-radius);
 	Direction: LTR;
+
+	&, *
+	{
+		Font-family: Var(--Font-Monospace);
+	}
 
 	&.Block
 	{
