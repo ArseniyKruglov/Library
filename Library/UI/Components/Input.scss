@@ -85,6 +85,7 @@
 	&.Titled
 	{
 		Display: Flex;
+		Align-items: Center;
 		Gap: 7.5px;
 
 		&:not(.Roomy)
@@ -192,7 +193,8 @@
 	&.Titled
 	{
 
-		& > Span
+
+		& > :first-child
 		{
 			Font-weight: 500;
 			White-space: Nowrap;
@@ -203,6 +205,12 @@
 			Border: None;
 		}
 	}
+}
+
+Span[Role="Textbox"][ContentEditable]
+{
+	Cursor: Text;
+	Min-width: 10px;
 }
 
 Input[Type="Color"].Library
@@ -218,13 +226,11 @@ Input[Type="Color"].Library
 
 Input[Type="Range"].Library
 {
-	&
-	{
-		-webkit-appearance: None;
-		height: 2.5px;
-		Border-radius: 1.25px;
-		background-color: Var(--Gray-20);
-	}
+	-webkit-appearance: None;
+	Height: 3px;
+	Border-radius: Var(--Border-radius);
+	Margin: 8.5px;
+	Background-color: Var(--Gray-20);
 
 	&::-webkit-slider-thumb
 	{
@@ -233,22 +239,23 @@ Input[Type="Range"].Library
 		Width: 20px;
 		Border-radius: 50%;
 		Transform: Scale(0.85);
-		Background: Var(--Gray-80);
-		Transition: Transform 150ms;
+		Background-color: Var(--Gray-80);
+		Transition: Transform 150ms, Background-color 150ms;
 		Cursor: ew-resize;
+
+		&:active
+		{
+			Transform: Scale(1);
+		}
 
 		&:hover
 		{
-			Transform: Scale(1.25);
+			Background-color: Var(--Text);
 		}
 	}
 
 	&::-webkit-slider-runnable-track
 	{
 		Margin: 0 -10px;
-		// -webkit-appearance: none;
-		// box-shadow: none;
-		// border: none;
-		// background: transparent;
 	}
 }

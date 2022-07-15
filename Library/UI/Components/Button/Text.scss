@@ -37,17 +37,8 @@ A.Text
 
 		&.Fill
 		{
-			// @if ($Lightness <= 80%)
-			// {
-				----Text: #FFFFFF;
-				----Text-Hover: #FFFFFF;
-			// }
-			// @else
-			// {
-			// 	----Text: #000000;
-			// 	----Text-Hover: #000000;
-			// }
-
+			----Text: #FFFFFF;
+			----Text-Hover: #FFFFFF;
 			----Background: Var(--Main-UI);
 			----Background-Hover: Var(--Main-UI-Hover);
 		}

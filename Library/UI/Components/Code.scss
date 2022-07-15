@@ -16,11 +16,12 @@ Code.Library
 		Max-width: unquote("Calc(100% - 30px)");
 		White-space: Nowrap;
 		Line-height: 150%;
-		Overflow-x: Auto;
+		Overflow-X: Auto;
 	}
 
 	&.Inline
 	{
-		Padding: 5px;
+		Padding: 0 5px;
+		Font-size: 95%;
 	}
 }

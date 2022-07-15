@@ -16,7 +16,7 @@ Custom-checkbox
 		& > Input[Type="Checkbox"]
 		{
 			Position: Absolute;
-			Width: 0;
+			Opacity: 0;
 
 			&:checked + Div > Custom-icon[Icon="outlined/check_box_outline_blank"],
 			&:not(:checked) + Div > Custom-icon[Icon="filled/check_box"]

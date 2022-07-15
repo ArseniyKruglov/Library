@@ -21,15 +21,15 @@ Custom-textarea
 
 	&:not(.Roomy) > Div > Textarea
 	{
-		Width: unquote("Calc(100% - 20px)");
-		Height: unquote("Calc(Var(--ContentHeight) - 20px)");
+		Width: unquote("Calc(100% - 20px + 1px)");
+		Height: unquote("Calc(Var(--ContentHeight) - 20px + 1px)");
 		Padding: 10px;
 	}
 
 	&.Roomy > Div > Textarea
 	{
-		Width: unquote("Calc(100% - 40px)");
-		Height: unquote("Calc(Var(--ContentHeight) - 40px)");
+		Width: unquote("Calc(100% - 40px + 1px)");
+		Height: unquote("Calc(Var(--ContentHeight) - 40px + 1px)");
 		Padding: 20px;
 	}
 

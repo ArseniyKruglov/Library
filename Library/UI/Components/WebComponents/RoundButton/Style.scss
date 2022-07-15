@@ -11,13 +11,6 @@ Custom-round-button
 	{
 		@include Reset_Button;
 		Position: Relative;
-		Display: Flex;
-		Align-items: Center;
-		Justify-content: Center;
-		Width: Var(--Scale);
-		Height: Var(--Scale);
-
-
 
 		& > Custom-icon
 		{
@@ -35,11 +28,11 @@ Custom-round-button
 		& > .Ripple
 		{
 			Position: Absolute;
-			Clip-path: Circle(14px);
-			Width: 28px;
-			Height: 28px;
+			Top: 0;
+			Clip-path: Circle(Calc(Var(--Scale) / 2));
+			Width: Var(--Scale);
+			Height: Var(--Scale);
 			Background-color: Var(--Hover-Color);
-			// Pointer-events: None;
 		}
 
 
@@ -64,9 +57,9 @@ Custom-round-button
 
 			@keyframes CustomRoundButton_Ripple
 			{
-				0%		{ Opacity: 30%;	Transform: Scale(1);				}
+				0%		{ Opacity: 30%;	Transform: Scale(1);		}
 				17.5%		{ Opacity: 15%;	Transform: Scale(1.75);		}
-				50%		{ Opacity: 5%;								}
+				50%		{ Opacity: 5%;						}
 				100%		{ Opacity: 0%;	Transform: Scale(1.75);		}
 			}
 		}
