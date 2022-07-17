@@ -1,0 +1,74 @@
+Input[Type="Range"].Library
+{
+	-webkit-appearance: None;
+	Height: 3px;
+	Border-radius: Var(--Border-radius);
+	Margin: 8.5px;
+
+	&:not(.Main)
+	{
+		Background-color: Var(--Gray-20);
+	}
+
+	&.Main
+	{
+		Background-color: unquote("HSLA(Var(--Hue), Calc(Var(--Saturation) * 1.1), Var(--Lightness), 20%)");
+	}
+
+
+
+	&::-webkit-slider-thumb
+	{
+		-webkit-appearance: None;
+		Height: 20px;
+		Width: 20px;
+		Border-radius: 50%;
+		Transform: Scale(0.85);
+		Transition: Transform 150ms, Background-color 150ms;
+
+		&:active
+		{
+			Transform: Scale(1);
+		}
+	}
+
+	&:not([Disabled])::-webkit-slider-thumb
+	{
+		Cursor: ew-resize;
+	}
+
+	&:not(.Main)::-webkit-slider-thumb
+	{
+		Background-color: Var(--Gray-80);
+	}
+
+	&.Main::-webkit-slider-thumb
+	{
+		Background-color: Var(--Main-UI);
+	}
+
+	&:hover:not(.Main)::-webkit-slider-thumb
+	{
+		Background-color: Var(--Text);
+	}
+
+	&:hover.Main::-webkit-slider-thumb
+	{
+		Background-color: Var(--Main-UI);
+	}
+
+
+
+	&::-webkit-slider-runnable-track
+	{
+		Margin: 0 -10px;
+	}
+
+
+
+	&[Disabled]
+	{
+		Opacity: 50%;
+		Cursor: Not-allowed;
+	}
+}

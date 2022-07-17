@@ -1,0 +1,47 @@
+.ButtonRadioGroup
+{
+	Display: Flex;
+
+	& > Label
+	{
+		Display: Flex;
+
+		& > Input[Type="Radio"]
+		{
+			Position: Absolute;
+			Opacity: 0;
+		}
+
+		& > Input[Type="Radio"]:checked + Span
+		{
+			Color: Var(--Main-UI);
+			Background-color: Var(--Main-UI-Transparent);
+		}
+
+		& > Input[Type="Radio"]:focus-visible + Span
+		{
+			Outline: Auto;
+		}
+
+		& > Span
+		{
+			Font-family: Var(--Font-UI);
+			Font-size: 14px;
+			Font-weight: 500;
+			Padding: 10px 15px;
+			Cursor: Pointer;
+			Border: 1px Solid Var(--Main-UI-Transparent);
+		}
+	}
+
+	& > :first-child > Span
+	{
+		Border-radius: Var(--Border-radius) 0 0 Var(--Border-radius);
+	}
+
+	& > :last-child > Span
+	{
+		Border-left: None;
+		Border-radius: 0 Var(--Border-radius) Var(--Border-radius) 0;
+	}
+}

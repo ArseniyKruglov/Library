@@ -192,8 +192,6 @@
 
 	&.Titled
 	{
-
-
 		& > :first-child
 		{
 			Font-weight: 500;
@@ -211,51 +209,4 @@ Span[Role="Textbox"][ContentEditable]
 {
 	Cursor: Text;
 	Min-width: 10px;
-}
-
-Input[Type="Color"].Library
-{
-	Padding: 0;
-	Border: None;
-	Width: 40px;
-	Height: 40px;
-	Clip-path: Circle(15px);
-	Margin: -5px;
-	Cursor: Pointer;
-}
-
-Input[Type="Range"].Library
-{
-	-webkit-appearance: None;
-	Height: 3px;
-	Border-radius: Var(--Border-radius);
-	Margin: 8.5px;
-	Background-color: Var(--Gray-20);
-
-	&::-webkit-slider-thumb
-	{
-		-webkit-appearance: None;
-		Height: 20px;
-		Width: 20px;
-		Border-radius: 50%;
-		Transform: Scale(0.85);
-		Background-color: Var(--Gray-80);
-		Transition: Transform 150ms, Background-color 150ms;
-		Cursor: ew-resize;
-
-		&:active
-		{
-			Transform: Scale(1);
-		}
-
-		&:hover
-		{
-			Background-color: Var(--Text);
-		}
-	}
-
-	&::-webkit-slider-runnable-track
-	{
-		Margin: 0 -10px;
-	}
 }
