@@ -1,21 +1,31 @@
+@mixin HR_Horizontal
+{
+	Width: 100%;
+	Height: 0;
+	Border-bottom: 1px Solid Var(--Gray-20);
+}
+
+@mixin HR_Vertical
+{
+	// Width: 0;
+	// Height: 100%;
+	Border-right: 1px Solid Var(--Gray-20);
+}
+
+
+
 HR
 {
 	Margin: 0;
 	Border: None;
 
-	& > .Horizontal,
 	[AutoLayout][Direction="Vertical"] > &
 	{
-		Width: 100%;
-		Height: 0;
-		Border-Bottom: 1px Solid Var(--Gray-20);
+		@include HR_Horizontal;
 	}
 
-	& > .Vertical,
 	[AutoLayout][Direction="Horizontal"] > &
 	{
-		Width: 0;
-		Height: 100%;
-		Border-Right: 1px Solid Var(--Gray-20);
+		@include HR_Vertical;
 	}
 }

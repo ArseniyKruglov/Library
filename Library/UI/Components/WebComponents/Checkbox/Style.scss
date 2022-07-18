@@ -55,13 +55,13 @@ Custom-checkbox
 				Width: 24px;
 				Height: 24px;
 				Background-color: Var(--Color);
+				Opacity: 0%;
 			}
 
 
 
 			& > .Backlight
 			{
-				Opacity: 0%;
 				Transition: Opacity 50ms, Transform 300ms;
 			}
 

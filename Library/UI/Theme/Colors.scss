@@ -60,8 +60,8 @@
 
 	// Main
 
-	--Main: HSL(#{$Hue}, #{$Saturation}, #{$Lightness});
-	--Main-UI: HSL(#{$Hue}, Calc(#{$Saturation} * 1.1), #{$Lightness});
-	--Main-UI-Hover: HSL(#{$Hue}, Calc(#{$Saturation} * 1.1), Calc(#{$Lightness} * 0.75));
-	--Main-UI-Transparent: HSLA(#{$Hue}, Calc(#{$Saturation} * 1.1), #{$Lightness}, 3.5%);
+	--Main: HSL(Var(--Hue), Var(--Saturation), Var(--Lightness));
+	--Main-UI: HSL(Var(--Hue), Calc(Var(--Saturation) * 1.1), Var(--Lightness));
+	--Main-UI-Hover: HSL(Var(--Hue), Calc(Var(--Saturation) * 1.1), Calc(Var(--Lightness) * 0.75));
+	--Main-UI-Transparent: HSLA(Var(--Hue), Calc(Var(--Saturation) * 1.1), Var(--Lightness), 3.5%);
 }

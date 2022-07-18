@@ -1,4 +1,4 @@
-class Icon extends HTMLElement
+customElements.define('custom-icon', class extends HTMLElement
 {
 	Icons = { /* ...Generator puts icons here... */ }
 
@@ -11,6 +11,4 @@ class Icon extends HTMLElement
 	{
 		this.children[0].innerHTML = this.Icons[Value];
 	}
-}
-
-customElements.define('custom-icon', Icon);
+});

@@ -40,17 +40,22 @@ function Match(Code, Regexp)
 
 function ReadFileSync(Path)
 {
-	return require('fs').readFileSync(Path).toString();
+	return FS.readFileSync(Path).toString();
+}
+
+function WriteFile(Path, Content, Callback = () => {})
+{
+	FS.writeFile(Path, Content, Callback);
 }
 
 function WriteFileSync(Path, Content)
 {
-	require('fs').writeFileSync(Path, Content);
+	FS.writeFileSync(Path, Content);
 }
 
 function CopyFileSync(From, To)
 {
-	require('fs').copyFileSync(From, To);
+	FS.copyFileSync(From, To);
 }
 
 function GlobSync(Pattern)
@@ -83,11 +88,18 @@ function Lazy(Path, Regexp)
 {
 	function Swap(Befores, Me)
 	{
+		function IndexOf(Path)
+		{
+			for (let i = 0; i < Included.length; i++)
+				if (_Path.relative(Path, Included[i]) === '')
+					return i;
+		}
+
 		for (let Before of Befores)
-			if (Included.indexOf(Before) > Included.indexOf(Me))
+			if (IndexOf(Before) > IndexOf(Me))
 			{
-				Included.splice(Included.indexOf(Before), 1);
-				Included.splice(Included.indexOf(Me), 0, Before);
+				Included.splice(IndexOf(Before), 1);
+				Included.splice(IndexOf(Me), 0, Before);
 				i++;
 			}
 	}
@@ -153,18 +165,18 @@ function UnCSS(Code, Selectors)
 
 function UglifyCSS(Code)
 {
-	return Code;		// TO DO: Ломает тени
+	return Code;		// TO DO: Ломает тени и Textarea
 	return require('uglifycss').processString(Code);
 }
 
-function Autoprefix(Code)
+function PostCSS_Lowercase(Code)
 {
-	require('postcss')([ require('autoprefixer') ]).process(css).then(result => {
-		result.warnings().forEach(warn => {
-		  console.warn(warn.toString())
-		})
-		console.log(result.css)
-	    })
+	// return require('postcss')([ require('postcss-lowercase-text') ]);
+}
+
+function PostCSS_Autoprefix(Code)
+{
+	return require('postcss').sync([ require('autoprefixer') ])(Code);
 }
 
 function UglifyJS(Code)
@@ -175,6 +187,23 @@ function UglifyJS(Code)
 function UglifyHTML(Code)
 {
 	return Code.replace(/\t|\n/g, '').replace(/<!--.*-->/g, '').replace(/> </g, '><');
+
+	// return require('html-minifier').minify
+	// (
+	// 	Code,
+	// 	{
+	// 		caseSensitive: true,
+	// 		collapseBooleanAttributes: true,
+	// 		collapseInlineTagWhitespace: true,
+	// 		collapseWhitespace: true,
+	// 		// conservativeCollapse: true,
+	// 		continueOnParseError: true,
+	// 		// preserveLineBreaks: true,
+	// 		removeAttributeQuotes: true,
+	// 		removeComments: true,
+	// 		removeRedundantAttributes: true
+	// 	}
+	// );
 }
 
 
@@ -213,22 +242,21 @@ function Clear()
 
 function PackCSS()
 {
-	UnCSS
-	(
-		SCSS_To_CSS
-		(
-			Merge
-			([
-				`${Source}/Constants-SCSS.scss`,
-				...Lazy(`${Library}/**/*.scss`, Regexps.SCSS),
-				...Lazy(`${Source}/*.scss`, Regexps.SCSS)
-			])
-			.replace(Regexps.SCSS, '')
-		)
-		.replace('@charset "UTF-8";', ''),
+	const Merged = Merge
+	([
+		...Lazy(`${Library}/**/*.scss`, Regexps.SCSS),
+		...Lazy(`${Source}/*.scss`, Regexps.SCSS)
+	]).replace(Regexps.SCSS, '');
 
-		[/.*/]
-	).then(Code => WriteFileSync(Output + '/Style.css', UglifyCSS(Code)));
+	const CSS = SCSS_To_CSS(Merged).replace('@charset "UTF-8";', '');
+
+	// PostCSS_Lowercase(CSS);
+
+	const UnCSSed = CSS;
+
+	const Uglified = UglifyCSS(UnCSSed);
+
+	WriteFile(Output + '/Style.css', Uglified);
 }
 
 function PackJS()
@@ -259,7 +287,7 @@ function PackJS()
 
 function PackHTML()
 {
-	FS.writeFile
+	WriteFile
 	(
 		Output + '/Index.html',
 		UglifyHTML
@@ -282,8 +310,8 @@ function PackHTML()
 
 				<Script Src='Script.js?${new Date().getTime()}'></Script>
 			 </HTML>`
-		),
-	() => {});
+		)
+	);
 }
 
 function PackIcon()
