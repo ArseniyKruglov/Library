@@ -138,7 +138,10 @@
 			&:Hover,
 			&:Focus-Within
 			{
-				Border-color: Var(--Gray-35);
+				@media (hover: hover)
+				{
+					Border-color: Var(--Gray-35);
+				}
 			}
 		}
 	}
@@ -152,7 +155,10 @@
 			&:Hover,
 			&:Focus-Within
 			{
-				Background-Color: Var(--Gray-5);
+				@media (hover: hover)
+				{
+					Background-Color: Var(--Gray-5);
+				}
 			}
 		}
 
@@ -161,7 +167,10 @@
 			&:Hover,
 			&:Focus-Within
 			{
-				Background-Color: Var(--Main-UI-Transparent);
+				@media (hover: hover)
+				{
+					Background-Color: Var(--Main-UI-Transparent);
+				}
 			}
 		}
 	}

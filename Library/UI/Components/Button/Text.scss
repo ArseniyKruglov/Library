@@ -70,14 +70,17 @@ A.Text
 
 	&:hover
 	{
-		----Text: Var(----Text-Hover) !important;
-
-		&.Hover,
-		&.Roomy,
-		&.Outlined,
-		&.Fill
+		@media (hover: hover)
 		{
-			----Background: Var(----Background-Hover) !important;
+			----Text: Var(----Text-Hover) !important;
+
+			&.Hover,
+			&.Roomy,
+			&.Outlined,
+			&.Fill
+			{
+				----Background: Var(----Background-Hover) !important;
+			}
 		}
 	}
 

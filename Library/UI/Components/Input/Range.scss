@@ -49,12 +49,18 @@ Input[Type="Range"].Library
 
 	&:hover:not(.Main)::-webkit-slider-thumb
 	{
-		Background-color: Var(--Text);
+		@media (hover: hover)
+		{
+			Background-color: Var(--Text);
+		}
 	}
 
 	&:hover.Main::-webkit-slider-thumb
 	{
-		Background-color: Var(--Main-UI);
+		@media (hover: hover)
+		{
+			Background-color: Var(--Main-UI);
+		}
 	}
 
 

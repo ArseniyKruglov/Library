@@ -232,7 +232,7 @@ function GetIcons(Names)
 
 function GetIconsList(Code)
 {
-	return [...Match(Code, /Icon="(.*?)"/g), 'outlined/check_box_outline_blank', 'filled/check_box', 'outlined/more_vert', 'outlined/expand_more', 'outlined/expand_less'];
+	return Match(Code, /Icon="(.*?)"/g);
 }
 
 function Clear()
@@ -261,7 +261,13 @@ function PackCSS()
 
 function PackJS()
 {
-	const Icons = GetIcons(GetIconsList(ReadFileSync(`${Source}/Index.html`)));
+	const Merged = Merge
+	([
+		...Lazy(`${Library}/**/*.js`, Regexps.JS),
+		...Lazy(`${Source}/*.js`, Regexps.JS)		// TO DO
+	]).replace(Regexps.JS, '');
+
+	const Icons = GetIcons(GetIconsList(ReadFileSync(`${Source}/Index.html`) + Merged));
 
 	Promise.all([Icons]).then((Values) =>
 	{
@@ -270,12 +276,7 @@ function PackJS()
 			Output + '/Script.js',
 			UglifyJS
 			(
-				Merge
-				([
-					...Lazy(`${Library}/**/*.js`, Regexps.JS),
-					...Lazy(`${Source}/*.js`, Regexps.JS)		// TO DO
-				])
-				.replace(Regexps.JS, '')
+				Merged
 				.replace(`{ /* ...Generator puts icons here... */ }`, JSON.stringify(Values[0]))
 			)
 			.replace(/>( |\n|\t)*?</g, '><')
@@ -294,7 +295,7 @@ function PackHTML()
 		(
 			`<!DOCTYPE HTML>
 
-			 <HTML Lang="RU">
+			 <HTML Lang="RU" AutoLayout Direction="Vertical">
 				<Head>
 					<Meta CharSet="UTF-8">
 

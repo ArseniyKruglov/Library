@@ -1,10 +1,10 @@
-class RoundButton extends HTMLElement
+customElements.define('custom-round-button', class extends HTMLElement
 {
 	connectedCallback()
 	{
 		this.innerHTML =	`<Button>
 						<Custom-icon Icon='${this.getAttribute('Icon')}'></Custom-icon>
-						<Div Class='Backlight'></Div>
+						<Div Class="Backlight"></Div>
 					 </Button>`;
 
 		PassAtributes(['type', 'tabindex'], this, this.children[0]);
@@ -22,6 +22,4 @@ class RoundButton extends HTMLElement
 	{
 		this.children[0].children[0].Icon = Value;
 	}
-}
-
-customElements.define('custom-round-button', RoundButton);
+});

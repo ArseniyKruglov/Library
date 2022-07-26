@@ -64,4 +64,9 @@
 	--Main-UI: HSL(Var(--Hue), Calc(Var(--Saturation) * 1.1), Var(--Lightness));
 	--Main-UI-Hover: HSL(Var(--Hue), Calc(Var(--Saturation) * 1.1), Calc(Var(--Lightness) * 0.75));
 	--Main-UI-Transparent: HSLA(Var(--Hue), Calc(Var(--Saturation) * 1.1), Var(--Lightness), 3.5%);
+
+	@media (Prefers-color-scheme: Dark)
+	{
+		--Main-UI-Hover: HSL(Var(--Hue), Calc(Var(--Saturation) * 1.1), Calc(Var(--Lightness) * 1.25));
+	}
 }

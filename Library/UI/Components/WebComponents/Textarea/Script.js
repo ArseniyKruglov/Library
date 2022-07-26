@@ -55,7 +55,7 @@ customElements.define('custom-textarea', class extends HTMLElement
 				this.Textarea.style.setProperty('--ContentHeight', this.Minimized + 'px');
 
 			this.Expand.innerHTML =  `<Span>${(this.Expanded ? ['Show less', 'Свернуть'] : ['Show full', 'Показать полностью'])[1]}</Span>
-							  <Custom-icon Icon='${this.Expanded ? 'outlined/expand_less' : 'outlined/expand_more'}''></Custom-icon>`;
+							  <Custom-icon Icon='${this.Expanded ? 'outlined/expand_less' : 'outlined/expand_more'}'></Custom-icon>`;
 		};
 	}
 

@@ -51,7 +51,7 @@ Custom-checkbox
 			& > .Ripple
 			{
 				Position: Absolute;
-				Clip-path: Circle(9px);
+				Clip-path: Circle(10px);
 				Width: 24px;
 				Height: 24px;
 				Background-color: Var(--Color);
@@ -74,9 +74,9 @@ Custom-checkbox
 				@keyframes CustomCheckbox_Ripple
 				{
 					0%		{ Opacity: 12.5%;	Transform: Scale(1);	}
-					17.5%		{ Opacity: 7.5%;	Transform: Scale(1.75);	}
+					17.5%		{ Opacity: 7.5%;	Transform: Scale(1.5);	}
 					50%		{ Opacity: 1.5%;					}
-					100%		{ Opacity: 0%;	Transform: Scale(1.75);	}
+					100%		{ Opacity: 0%;	Transform: Scale(1.5);	}
 				}
 			}
 		}
@@ -84,7 +84,10 @@ Custom-checkbox
 
 	&:Hover > Label > Div > .Backlight
 	{
-		Opacity: 5%;
-		Transform: Scale(1.75);
+		@media (hover: hover)
+		{
+			Opacity: 5%;
+			Transform: Scale(1.5);
+		}
 	}
 }

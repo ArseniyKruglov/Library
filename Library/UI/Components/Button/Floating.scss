@@ -27,7 +27,10 @@ Button.Floating
 
 	&:hover
 	{
-		Background-Color: Var(--Gray-10);
+		@media (hover: hover)
+		{
+			Background-Color: Var(--Gray-10);
+		}
 	}
 
 	@media (Min-Width: 700px)

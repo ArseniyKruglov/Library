@@ -1,4 +1,4 @@
-class Select extends HTMLSelectElement
+customElements.define('custom-select', class extends HTMLSelectElement
 {
 	connectedCallback()
 	{
@@ -25,6 +25,4 @@ class Select extends HTMLSelectElement
 		document.fonts.ready.then(() => Scale());		// TO DO
 		Scale();
 	}
-}
-
-customElements.define('custom-select', Select, { extends: 'select' });
+}, { extends: 'select' });

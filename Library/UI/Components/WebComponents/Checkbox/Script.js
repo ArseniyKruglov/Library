@@ -1,12 +1,12 @@
-class CustomCheckbox extends HTMLElement
+customElements.define('custom-checkbox', class extends HTMLElement
 {
 	connectedCallback()
 	{
 		this.innerHTML =	`<Label>
 						<Input Type='Checkbox'>
 						<Div AutoLayout Direction='Horizontal' AlignY='Center'>
-							<Custom-icon Icon='outlined/check_box_outline_blank'></Custom-icon>
-							<Custom-icon Icon='filled/check_box'></Custom-icon>
+							<Custom-icon Icon="outlined/check_box_outline_blank"></Custom-icon>
+							<Custom-icon Icon="filled/check_box"></Custom-icon>
 
 							<Div Class='Backlight'></Div>
 
@@ -43,6 +43,4 @@ class CustomCheckbox extends HTMLElement
 	{
 		return this.children[0].children[0].checked = Value;
 	}
-}
-
-customElements.define('custom-checkbox', CustomCheckbox);
+});

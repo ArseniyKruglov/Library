@@ -7,10 +7,16 @@ Custom-round-button
 	--Hover-Color: Var(--Icon-Color);
 	--Hover-Icon-Color: Var(--Icon-Color);
 
+	Width: Var(--Scale);
+	Height: Var(--Scale);
+
 	& > Button
 	{
 		@include Reset_Button;
 		Position: Relative;
+
+		Width: Var(--Scale);
+		Height: Var(--Scale);
 
 		& > Custom-icon
 		{
@@ -19,7 +25,10 @@ Custom-round-button
 
 		&:hover > Custom-icon
 		{
-			--Color: Var(--Hover-Icon-Color);
+			@media (hover: hover)
+			{
+				--Color: Var(--Hover-Icon-Color);
+			}
 		}
 
 
@@ -33,20 +42,23 @@ Custom-round-button
 			Width: Var(--Scale);
 			Height: Var(--Scale);
 			Background-color: Var(--Hover-Color);
+			Opacity: 0%;
 		}
 
 
 
 		& > .Backlight
 		{
-			Opacity: 0%;
 			Transition: Opacity 50ms, Transform 300ms;
 		}
 
 		&:hover > .Backlight
 		{
-			Opacity: 5%;
-			Transform: Scale(1.75);
+			@media (hover: hover)
+			{
+				Opacity: 5%;
+				Transform: Scale(1.75);
+			}
 		}
 
 
